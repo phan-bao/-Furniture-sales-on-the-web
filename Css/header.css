@@ -1,0 +1,64 @@
+/* Áp dụng font Roboto cho toàn bộ header và menu */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: 'Roboto', sans-serif; /* Sử dụng font Roboto */
+}
+
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 15px 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.logo a {
+    font-size: 24px;
+    font-weight: bold;
+    color: #154422;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.main-nav ul li {
+    margin: 0 15px;
+}
+
+.main-nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.3s;
+    font-family: 'Roboto', sans-serif;
+}
+
+.main-nav ul li a:hover {
+    color: #154422;
+}
+
+.header-icons a {
+    margin-left: 20px;
+    font-size: 18px;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-family: 'Roboto', sans-serif;
+}
+
+.header-icons a:hover {
+    color: #154422;
+}

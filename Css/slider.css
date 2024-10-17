@@ -1,0 +1,116 @@
+/* Căn chỉnh toàn bộ phần slider */
+.hero-slider {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 100px;
+    background-color: #f7f7f7;
+}
+
+.hero-content {
+    max-width: 50%;
+}
+
+.subtitle {
+    font-size: 18px;
+    color: #f7b81d;
+    font-weight: 500;
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #154422;
+}
+
+h1 span {
+    color: #154422; /* Màu xanh đậm */
+}
+
+.description {
+    font-size: 16px;
+    color: #666;
+    margin: 20px 0;
+}
+
+.hero-buttons {
+    margin: 30px 0;
+}
+
+.btn-shop-now {
+    background-color: #154422;
+    color: white;
+    padding: 12px 30px;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.btn-view-products {
+    border: 1px solid #333;
+    color: #333;
+    padding: 12px 30px;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.ratings {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.ratings img {
+    width: 150px;
+    height: auto;
+    margin-right: 15px;
+}
+
+/* Chỉnh lại phần slider-items để hiển thị theo hàng ngang */
+.slider-items {
+    display: flex;
+    transition: transform 0.5s ease;
+    gap: 20px; /* Khoảng cách giữa các slider-item */
+    justify-content: flex-start; /* Đẩy các hình ảnh sang bên trái */
+    padding-left: 10px; /* Điều chỉnh giá trị này để di chuyển sang trái nhiều hơn */
+}
+
+/* Đảm bảo hình ảnh trong slider có kích thước khác nhau để tạo hiệu ứng nhấp nhô */
+.slider-item img {
+    width: 100%; /* Chiều rộng tự động điều chỉnh theo .slider-item */
+    object-fit: cover; /* Cắt ảnh để phù hợp với chiều rộng và chiều cao */
+    border-radius: 10px; /* Bo góc cho hình ảnh */
+}
+
+/* Điều chỉnh chiều cao của các hình ảnh để tạo hiệu ứng nhấp nhô */
+.slider-item:nth-child(1) img {
+    height: 300px; /* Chiều cao hình ảnh đầu tiên */
+}
+
+.slider-item:nth-child(2) img {
+    height: 350px; /* Chiều cao hình ảnh thứ hai */
+}
+
+.slider-item:nth-child(3) img {
+    height: 250px; /* Chiều cao hình ảnh thứ ba */
+}
+
+.slider-item:nth-child(4) img {
+    height: 400px; /* Chiều cao hình ảnh thứ tư */
+}
+/* Thêm hiệu ứng parallax cho slider-item */
+.slider-item {
+    position: relative;
+    perspective: 1000px;
+}
+
+.slider-item img {
+    transform: translateZ(-50px); /* Tạo chiều sâu */
+    transition: transform 0.3s ease;
+}
+
+.slider-item:hover img {
+    transform: translateZ(0px); /* Quay lại vị trí ban đầu khi hover */
+}

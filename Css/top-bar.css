@@ -1,0 +1,37 @@
+/* Đảm bảo top-bar chiếm toàn bộ chiều rộng trang và sát với viền trên */
+.top-bar {
+    background-color: #154422; /* Màu nền xanh đậm */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    width: 100%;
+    box-sizing: border-box; /* Đảm bảo padding không ảnh hưởng đến kích thước */
+    margin: 0; /* Loại bỏ margin dư thừa */
+}
+
+.top-bar-left,
+.top-bar-center,
+.top-bar-right {
+    display: flex;
+    align-items: center;
+}
+
+.top-bar a {
+    color: #f7b81d; /* Màu vàng của các liên kết */
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+.top-bar-right a {
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+.top-bar-right a:hover {
+    color: #ffdc73;
+}
+
+.top-bar-center a {
+    font-weight: bold;
+}

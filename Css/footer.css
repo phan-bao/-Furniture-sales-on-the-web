@@ -1,0 +1,105 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    height: 100%; /* Đảm bảo body chiếm toàn bộ chiều cao */
+}
+
+/* Đảm bảo rằng footer luôn nằm ở cuối trang */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex: 1; /* Đảm bảo phần nội dung chính đẩy footer xuống dưới */
+}
+/* footer.css */
+.site-footer {
+    background-color: #154422;
+    color: white;
+    padding: 0px 0;
+    margin: 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.footer-column {
+    flex: 1;
+    margin: 0 15px;
+}
+
+.footer-column h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-column ul li a:hover {
+    text-decoration: underline;
+}
+
+.logo-section p {
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 18px;
+    color: white;
+}
+
+.social-icons a:hover {
+    color: #f7b81d;
+}
+
+.footer-bottom {
+    background-color: #f7b81d;
+    color: #154422;
+    text-align: center;
+    padding: 15px 0;
+    margin: 0; /* Đảm bảo không có margin tạo ra khoảng trống */
+}
+
+
+.footer-bottom p {
+    margin: 0;
+}
+
+.footer-settings {
+    margin-top: 10px;
+}
+
+.footer-settings span {
+    margin-right: 20px;
+    cursor: pointer;
+    color: #154422;
+}
+
+.footer-settings i {
+    font-size: 12px;
+    margin-left: 5px;
+}
