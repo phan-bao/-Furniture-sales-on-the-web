@@ -2,6 +2,7 @@
 <?php include 'Partials/slider.php'; ?>
 
 <link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="css/header.css">
 <!-- Nội dung chính của trang -->
 <div class="main-content">
     

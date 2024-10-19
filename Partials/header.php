@@ -17,29 +17,98 @@
 </head>
 
 <body>
-    <!-- Gọi phần top-bar từ file top-bar.php -->
-    <?php include 'top-bar.php'; ?>
-    
+
+<div class="overlay"></div>
     <!-- Phần header của website -->
     <header class="site-header">
         <div class="logo">
-            <a href="#">Bliss</a>
+            <a href="../index.php">
+                <img src="/BLISS-MASTER/Images/logo1.png" alt="Bliss" style="max-height: 60px; width: 60px;">
+            </a>
         </div>
-        <nav class="main-nav">
+        
+        <div class="bars-icon">
+        <a href="Pages/login.php" class="account-icon"><i class="fas fa-user"></i></a> <!-- Thêm icon tài khoản -->
+            <a href="#" class="cart-icon"><i class="fas fa-shopping-cart"></i></a> <!-- Thêm icon giỏ hàng -->
+
+            <a href="#" id="menuToggle" style="color: #000;">
+                <i class="fas fa-bars"></i>
+            </a>
+            
+        </div>
+
+        <nav class="main-nav mobile">
             <ul>
-            <li><a href="../index.php">Trang Chủ</a></li>
+                <li><a href="../index.php">Trang Chủ</a></li>
                 <li><a href="Pages/sanpham.php">Sản Phẩm</a></li>
-                <li><a href="">Liên Hệ</a></li>
+                <li><a href="#">Liên Hệ</a></li>
                 <li><a href="#">Tin Tức</a></li>
                 <li><a href="#">Kiểm Tra Đơn Hàng</a></li>
             </ul>
         </nav>
+
+        <nav class="main-nav desktop">
+            <ul>
+                <li><a href="../index.php">Trang Chủ</a></li>
+                <li><a href="Pages/sanpham.php">Sản Phẩm</a></li>
+                <li><a href="#">Liên Hệ</a></li>
+                <li><a href="#">Tin Tức</a></li>
+                <li><a href="#">Kiểm Tra Đơn Hàng</a></li>
+            </ul>
+        </nav>
+
         <div class="header-icons">
-            <a href="#"><i class="fas fa-search"></i></a>
             <a href="#"><i class="far fa-heart"></i></a>
             <a href="#"><i class="fas fa-shopping-cart"></i></a>
             <a href="Pages/login.php"><i class="fas fa-user"></i></a>
         </div>
     </header>
+    <script>
+const menuToggle = document.getElementById('menuToggle');
+const mainNav = document.querySelector('.main-nav.mobile');
+const overlay = document.querySelector('.overlay');
+
+// Thiết lập các thuộc tính CSS cho overlay ban đầu
+overlay.style.opacity = '0'; // Mặc định trong suốt
+overlay.style.transition = 'opacity 0.5s ease'; // Thêm hiệu ứng chuyển tiếp
+
+menuToggle.addEventListener('click', function() {
+    mainNav.classList.toggle('show');
+
+    if (mainNav.classList.contains('show')) {
+        overlay.style.display = 'block'; // Hiển thị overlay
+        setTimeout(() => {
+            overlay.style.opacity = '1'; // Đặt độ mờ thành 1 sau khi hiển thị
+        }, 10); // Thêm chút thời gian để đảm bảo CSS transition hoạt động
+    } else {
+        overlay.style.opacity = '0'; // Đặt độ mờ thành 0 để ẩn
+        setTimeout(() => {
+            overlay.style.display = 'none'; // Ẩn overlay sau khi chuyển tiếp
+        }, 500); // Thời gian ẩn phải trùng khớp với thời gian chuyển tiếp
+    }
+});
+
+document.addEventListener('click', function(event) {
+    if (!mainNav.contains(event.target) && !menuToggle.contains(event.target)) {
+        mainNav.classList.remove('show');
+        overlay.style.opacity = '0'; // Đặt độ mờ thành 0 để ẩn
+        setTimeout(() => {
+            overlay.style.display = 'none'; // Ẩn overlay sau khi chuyển tiếp
+        }, 500); // Thời gian ẩn phải trùng khớp với thời gian chuyển tiếp
+    }
+});
+
+
+</script>
+
+
 </body>
+
+
+
+
+<?php
+$imagePath = '../Images/logo1.png'; // Đối với các trang nằm trong thư mục con
+?>
+
 </html>

@@ -1,6 +1,6 @@
 /* Đảm bảo top-bar chiếm toàn bộ chiều rộng trang và sát với viền trên */
 .top-bar {
-    background-color: #154422; /* Màu nền xanh đậm */
+    background-color: #383838; /* Màu nền xanh đậm */
     color: white;
     display: flex;
     justify-content: space-between;
@@ -34,4 +34,11 @@
 
 .top-bar-center a {
     font-weight: bold;
+}
+
+/* Ẩn top-bar trên màn hình nhỏ hơn 768px */
+@media (max-width: 768px) {
+    .top-bar {
+        display: none; /* Ẩn top-bar */
+    }
 }

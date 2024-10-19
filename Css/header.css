@@ -15,7 +15,6 @@ body, html {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     width: 100%;
     box-sizing: border-box;
-    margin: 0;
 }
 
 .logo a {
@@ -23,18 +22,23 @@ body, html {
     font-weight: bold;
     color: #154422;
     text-decoration: none;
-    font-family: 'Roboto', sans-serif;
+}
+
+/* Định dạng menu cho máy tính */
+.main-nav {
+    display: flex; /* Hiển thị menu mặc định trên máy tính */
 }
 
 .main-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
+    list-style: none; /* Xóa dấu đầu dòng */
+    margin: 0; /* Xóa khoảng cách */
+    padding: 0; /* Xóa khoảng cách */
+    display: flex; /* Hiển thị menu ngang trên máy tính */
 }
 
+/* Các mục trong menu */
 .main-nav ul li {
-    margin: 0 15px;
+    margin: 0 15px; /* Khoảng cách giữa các mục */
 }
 
 .main-nav ul li a {
@@ -43,11 +47,66 @@ body, html {
     font-weight: 500;
     font-size: 16px;
     transition: color 0.3s;
-    font-family: 'Roboto', sans-serif;
+    padding: 10px; /* Thêm khoảng cách xung quanh */
 }
 
 .main-nav ul li a:hover {
     color: #154422;
+}
+
+/* Thay đổi trong CSS của bạn */
+.main-nav.mobile {
+    visibility: hidden; /* Thay vì display: none; */
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 80%;
+    max-width: 300px;
+    background-color: #fff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s ease; /* Điều chỉnh thời gian này nếu cần */
+
+    transform: translateX(100%);
+    z-index: 1000;
+}
+
+/* Khi menu được hiển thị */
+.main-nav.mobile.show {
+    visibility: visible; /* Hiển thị menu */
+    transform: translateX(0);
+    transition: transform 0.5s ease; /* Bỏ transition cho visibility */
+}
+
+
+/* Định dạng các mục trong menu di động */
+.main-nav.mobile ul {
+    list-style: none; /* Xóa dấu đầu dòng */
+    padding: 20px; /* Thêm khoảng cách */
+    display: flex; /* Hiển thị menu dọc */
+    flex-direction: column; /* Đặt menu dọc */
+}
+
+.main-nav.mobile ul li {
+    margin: 15px 0; /* Khoảng cách giữa các mục */
+}
+
+.main-nav.mobile ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 18px; /* Kích thước chữ lớn hơn cho dễ đọc */
+    transition: color 0.3s;
+    padding: 10px; /* Thêm khoảng cách xung quanh */
+}
+
+/* Hiệu ứng hover cho các mục menu */
+.main-nav.mobile ul li a:hover {
+    color: #154422; /* Màu khi hover */
+}
+
+.header-icons {
+    display: flex;
 }
 
 .header-icons a {
@@ -56,9 +115,72 @@ body, html {
     color: #333;
     text-decoration: none;
     transition: color 0.3s;
-    font-family: 'Roboto', sans-serif;
 }
 
 .header-icons a:hover {
     color: #154422;
+}
+
+/* Media queries để điều chỉnh hiển thị trên thiết bị di động */
+@media (max-width: 768px) {
+    .main-nav {
+        display: none; /* Ẩn menu trên điện thoại */
+    }
+
+    .header-icons {
+        display: none; /* Ẩn các icon khác trên điện thoại */
+    }
+
+    .bars-icon {
+        display: flex; /* Hiển thị icon bars */
+        color: #000;
+        
+    }
+    .account-icon {
+        margin-right: 20px; /* Khoảng cách giữa biểu tượng tài khoản và các biểu tượng khác */
+        color: #000;
+    }
+    .cart-icon {
+        margin-right: 20px; /* Khoảng cách giữa biểu tượng giỏ hàng và các biểu tượng khác */
+        color: #000; /* Đặt màu đen cho icon */
+    }
+
+    .main-nav.mobile.show {
+        display: flex; /* Hiển thị menu khi có class 'show' */
+        position: fixed; /* Để menu luôn nằm cố định */
+        left: 0; /* Căn trái */
+        top: 0; /* Đặt khoảng cách từ trên xuống */
+        height: 100%; /* Chiều cao 100% */
+        background-color: #fff; /* Nền của menu */
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+        width: 80%; /* Chiều rộng của menu (80% chiều rộng màn hình) */
+        max-width: 300px; /* Chiều rộng tối đa của menu */
+        z-index: 1000; /* Đặt z-index cao để menu hiển thị trên các phần tử khác */
+    }
+}
+
+/* Ẩn biểu tượng bars trên máy tính */
+@media (min-width: 769px) {
+    .bars-icon {
+        display: none; /* Ẩn icon bars trên máy tính */
+    }
+}
+/* Hiệu ứng cho lớp che phủ */
+.overlay {
+    display: none; /* Ẩn lớp che phủ mặc định */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Màu nền tối với độ mờ */
+    z-index: 500; /* Đặt lớp che phủ nằm trên tất cả */
+    opacity: 0; /* Bắt đầu ở trạng thái trong suốt */
+    transition: opacity 0.5s ease; /* Thay đổi thời gian chuyển tiếp thành 0.5s */
+}
+
+/* Hiển thị lớp che phủ khi menu được mở */
+.overlay.active {
+    display: block; /* Hiển thị lớp che phủ */
+    opacity: 1; /* Đặt độ mờ thành 1 để hiện rõ */
 }

@@ -10,7 +10,7 @@
 
 <div class="top-bar">
     <div class="top-bar-left">
-        <span>Call Us : 0778 000 878</span>
+        <span>Theo Dõi Đơn Hàng | bxgangter@gmail.com</span>
     </div>
     <div class="top-bar-center">
         <span>Đăng ký và nhận giảm giá 25% cho đơn hàng đầu tiên của bạn. <a href="Pages/login.php">Đăng ký ngay</a></span>
