@@ -55,3 +55,27 @@
 </p>
 
 
+<h3>----------------------- Admin dashboard page -----------------------------</h3>
+
+<p align="center">
+ <img width="975" height="436" alt="image" src="https://github.com/user-attachments/assets/ea760e6c-cc1d-4dfa-90eb-2f0436513ae3" />
+</p>
+
+<h3 align="center">-----------------------  Product Management Page -----------------------------</h3>
+
+<p align="center">
+ <img width="975" height="460" alt="image" src="https://github.com/user-attachments/assets/5bd72e43-fe8c-42b4-8710-779aad69a505" />
+</p>
+
+<h3 align="center">-----------------------  Blog Management Page -----------------------------</h3>
+
+<p align="center">
+<img width="975" height="461" alt="image" src="https://github.com/user-attachments/assets/483cca4c-9477-434e-89d7-0be605e49606" />
+</p>
+
+<h3 align="center">----------------------- Detail Blog Management Page -----------------------------</h3>
+
+<p align="center">
+<img width="975" height="466" alt="image" src="https://github.com/user-attachments/assets/7052de12-eba6-4ff3-b896-7d7b8cb0d96b" />
+</p>
+
