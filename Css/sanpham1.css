@@ -1,0 +1,377 @@
+/* Định dạng chung */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+}
+
+/* Thanh điều hướng (breadcrumb) */
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    padding: 12px 30px;
+    background-color: #fff;
+    color: #555;
+    margin: 20px 0;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.breadcrumb-home {
+    color: #aeaeae;
+}
+
+.breadcrumb-link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.breadcrumb-link:hover {
+    color: #0056b3;
+}
+
+.breadcrumb-separator {
+    color: #bbb;
+    padding: 0 8px;
+    font-size: 18px;
+}
+
+/* Container chính */
+.main-container {
+    display: flex;
+    justify-content: flex-start; /* Xếp các phần tử từ trái sang phải */
+    align-items: flex-start;
+    gap: 20px; /* Khoảng cách giữa bộ lọc và sản phẩm */
+    padding: 20px;
+    max-width: 1200px; /* Giới hạn chiều rộng */
+    margin: 0 auto; /* Canh giữa trang */
+    padding-right: 270px;
+}
+
+/* Bộ lọc sản phẩm */
+.filter-container {
+    flex-shrink: 0;
+    width: 280px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 12px; /* Bo góc mềm mại */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+.filter-container:hover {
+    transform: translateY(-5px); /* Hiệu ứng hover khi di chuột qua */
+}
+
+.filter-container h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+
+/* Thanh tìm kiếm trong bộ lọc */
+.search-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Đặt input và nút tìm kiếm ở hai đầu */
+    margin-bottom: 20px;
+    padding: 0;
+    border-bottom: 2px solid #ddd; /* Chỉ có đường viền ngang dưới */
+}
+
+.search-box input[type="text"] {
+    width: 85%; /* Cho ô input chiếm phần lớn chiều rộng */
+    padding: 8px 10px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    color: #333;
+    background-color: transparent; /* Chỉ để nền trong suốt */
+}
+
+.search-box input[type="text"]:focus {
+    background-color: transparent; /* Giữ nền trong suốt khi focus */
+    border-bottom: 2px solid #007bff; /* Đổi màu đường viền dưới khi focus */
+}
+
+.search-box .search-btn {
+    background-color: transparent;
+    color: #007bff;
+    padding: 8px 12px;
+    border: 2px solid #007bff;
+    border-radius: 50%; /* Nút tìm kiếm vẫn hình tròn */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-box .search-btn:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+
+/* Các phần mục bộ lọc */
+.filter-section h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.filter-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.filter-section li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    padding-bottom: 12px;
+}
+
+.filter-section input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.1);
+}
+/* Nút bộ lọc */
+.filter-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.filter-btn, .clear-filter-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.filter-btn {
+    background-color: #A0522D;
+    color: white;
+    transform: scale(1);
+}
+
+.filter-btn:hover {
+    background-color: #8B4513;
+    transform: scale(1.05); /* Hiệu ứng phóng to khi hover */
+}
+
+.clear-filter-btn {
+    background-color: #333;
+    color: white;
+    transform: scale(1);
+}
+
+.clear-filter-btn:hover {
+    background-color: #444;
+    transform: scale(1.05);
+}
+
+/* Các nút lọc khi không đủ không gian trên các màn hình nhỏ */
+@media (max-width: 768px) {
+    .filter-container {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .filter-btn, .clear-filter-btn {
+        width: 48%; /* Cho các nút lọc chia đôi khi màn hình nhỏ */
+    }
+}
+
+/* Sản phẩm */
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cột */
+    gap: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Các sản phẩm */
+.product-item {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-sizing: border-box;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s ease-in-out;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.product-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Đảm bảo các sản phẩm sẽ xuống dòng đúng khi không đủ không gian */
+@media (max-width: 1200px) {
+    .product-item {
+        width: calc(50% - 20px); /* Nếu màn hình nhỏ hơn 1200px, mỗi sản phẩm chiếm 1/2 chiều rộng */
+    }
+}
+
+@media (max-width: 768px) {
+    .product-item {
+        width: 100%; /* Nếu màn hình nhỏ hơn 768px, mỗi sản phẩm sẽ chiếm toàn bộ chiều rộng */
+    }
+}
+
+.product-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.product-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.product-item h4 {
+    font-size: 1.1em;
+    margin: 10px 0;
+    color: #333;
+    font-weight: 600;
+}
+
+.product-item p {
+    font-size: 1em;
+    color: #777;
+    margin: 5px 0;
+}
+
+.product-rating {
+    color: #ffcc00;
+    font-size: 1em;
+    margin: 5px 0;
+}
+
+.current-price {
+    color: #ff4d4f;
+    font-weight: bold;
+    font-size: 1.3em;
+    margin: 5px 0;
+}
+
+.product-info {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 12px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Thêm hiệu ứng hover vào sản phẩm */
+.product-item a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.product-item a:hover {
+    color: inherit;
+}
+
+/* Thêm hiệu ứng load cho sản phẩm */
+.product-item .product-info span {
+    background-color: #fafafa;
+    padding: 6px 12px;
+    border-radius: 5px;
+}
+
+/* Nhãn giảm giá */
+.discount-label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #ff4d4f;
+    color: #fff;
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+/* Giá sản phẩm */
+.current-price {
+    color: #ff4d4f;
+    font-weight: bold;
+    font-size: 1.3em;
+    margin: 5px 0;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #888;
+    font-size: 1em;
+    margin-bottom: 5px;
+}
+
+.discount-label {
+    background-color: #ff4d4f;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.product-item {
+    position: relative;
+    width: 300px;
+    margin: 20px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.discount-label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 3px;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 14px;
+}
+
+.current-price {
+    color: #e74c3c;
+    font-size: 18px;
+    font-weight: bold;
+}

@@ -5,22 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
-    <link rel="stylesheet" href="../Css/dashboard.css">
+    <link rel="stylesheet" href="../Css/menu.css">
     <title>Responsive Dashboard Design #1 | AsmrProg</title>
 </head>
+
 <script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Lấy URL hiện tại (bao gồm cả tên file)
+    const currentPage = window.location.pathname.split('/').pop();
+    console.log("Current Page:", currentPage); // Kiểm tra đường dẫn của trang hiện tại
+
     // Lấy tất cả các mục trong sidebar
     const sidebarItems = document.querySelectorAll('aside .sidebar a');
 
-    // Lặp qua tất cả các mục
+    // Lặp qua tất cả các mục và thêm class 'active' vào mục có href khớp với URL
     sidebarItems.forEach(item => {
-        item.addEventListener('click', function() {
-            // Xóa class 'active' khỏi tất cả các mục
-            sidebarItems.forEach(i => i.classList.remove('active'));
-            // Thêm class 'active' vào mục được nhấp
-            this.classList.add('active');
-        });
+        const itemPath = item.getAttribute('href').split('/').pop(); // Lấy tên file từ href
+        console.log("Item href:", itemPath); // Kiểm tra href của các mục
+
+        // So sánh tên file của trang hiện tại với href của mục menu
+        if (currentPage === itemPath) {
+            item.classList.add('active');
+        } else {
+            item.classList.remove('active');
+        }
     });
+});
 </script>
 
 <body>
@@ -29,8 +39,8 @@
         <!-- Sidebar Section -->
         <aside>
             <div class="toggle">
-                <div class="logo">
-                    <img src="images/logo.png">
+                <div class="">
+                    <img src="">
                     <h2>B<span class="danger">LISS</span></h2>
                 </div>
                 <div class="close" id="close-btn">
@@ -41,7 +51,7 @@
             </div>
 
             <div class="sidebar">
-            <a href="#" class="active">
+                <a href="../admin/dashboard.php">
                     <span class="material-icons-sharp">
                         insights
                     </span>
@@ -53,38 +63,34 @@
                     </span>
                     <h3>Đơn Hàng</h3>
                 </a>
-                <a href="#">
+                <a href="../admin/khachhang.php">
                     <span class="material-icons-sharp">
                         person_outline
                     </span>
-                    <h3>Users</h3>
+                    <h3>Khách Hàng</h3>
                 </a>
-                <a href="#">
+                <a href="../admin/khuyenmai.php">
                     <span class="material-icons-sharp">
                         receipt_long
                     </span>
-                    <h3>History</h3>
+                    <h3>Khuyến Mãi</h3>
                 </a>
-                
-                <a href="#">
+
+                <a href="../admin/sanpham.php">
                     <span class="material-icons-sharp">
                         mail_outline
                     </span>
-                    <h3>Tickets</h3>
-                    <span class="message-count">27</span>
+                    <h3>Sản Phẩm</h3>
+
                 </a>
-                <a href="#">
+
+                <a href="../admin/BlogAdmin.php">
                     <span class="material-icons-sharp">
                         inventory
                     </span>
-                    <h3>Sale List</h3>
+                    <h3>Blog</h3>
                 </a>
-                <a href="#">
-                    <span class="material-icons-sharp">
-                        report_gmailerrorred
-                    </span>
-                    <h3>Reports</h3>
-                </a>
+
                 <a href="#">
                     <span class="material-icons-sharp">
                         settings
@@ -97,58 +103,16 @@
                     </span>
                     <h3>New Login</h3>
                 </a>
-                <a href="#">
+                <a href="logoutadmin.php">
                     <span class="material-icons-sharp">
                         logout
                     </span>
-<h3>Logout</h3>
+                    <h3>Logout</h3>
                 </a>
             </div>
         </aside>
         <!-- End of Sidebar Section -->
 
-        <!-- Main Content -->
-        <main>
-            <h1>Analytics</h1>
-            <!-- Analyses -->
- 
-        </main>
-        <!-- End of Main Content -->
-
-        <!-- Right Section -->
-        <div class="right-section">
-            <div class="nav">
-                <button id="menu-btn">
-                    <span class="material-icons-sharp">
-                        menu
-                    </span>
-                </button>
-                <div class="dark-mode">
-                    <span class="material-icons-sharp active">
-                        light_mode
-                    </span>
-                    <span class="material-icons-sharp">
-                        dark_mode
-                    </span>
-                </div>
-
-                <div class="profile">
-                    <div class="info">
-                        <p>Hey, <b>Reza</b></p>
-                        <small class="text-muted">Admin</small>
-                    </div>
-                    <div class="profile-photo">
-                        <img src="images/profile-1.jpg">
-                    </div>
-                </div>
-
-            </div>
-            <!-- End of Nav -->
-
-        
-
-    <script src="../Js/order.js"></script>
-    <script src="../Js/dashboard.js"></script>
 </body>
 
 </html>

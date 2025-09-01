@@ -1,0 +1,206 @@
+.sit-header {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    height: auto;
+}
+
+.body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+.center {
+    display: block;
+    width: 1400px; /* Fixed width */
+    height: 700px; /* Fixed height */
+    margin-top: 200px; /* Spacing from the top */
+    margin: 0 auto; 
+}
+
+.center img {
+    width: 1400px; /* Fixed width */
+    height: 700px;/* Ensures the image fills the container's height */
+    object-fit: cover; /* Ensures the image maintains its aspect ratio and fills the space */
+    display: block;  /* Ensures image covers the container without distortion */
+    transition: opacity 0.1s ease-in-out; /* Smooth fade effect */
+
+}
+
+.center img.hidden {
+    opacity: 0; /* Hide images not being shown */
+    pointer-events: none; /* Disable interaction with hidden images */
+}
+
+
+
+.Text-header {
+    position: absolute;
+    top: 13%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(4, 2, 2);
+    font-size: 24px;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 10px;
+    margin-top: 170px;
+    border-radius: 5px;
+}
+
+.Text-header li {
+    list-style: none;
+    padding-top: 10;
+    margin: 5px 0;
+}
+
+.Text-header a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Nội dung */
+h1 {
+    text-align: center; /* Center the text */
+    text-decoration: none; /* Remove the underline */
+    font-size: 2rem; /* Adjust the font size as needed */
+    color: #333; /* Optional: Change the text color */
+    margin-top: 50px; /* Optional: Add spacing above */
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    justify-content: center;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    /* width: 300px; */
+    text-align: center;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+    filter: grayscale(50%);
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.card:hover img {
+    transform: scale(1.05);
+    filter: grayscale(0%);
+}
+
+/* Phần hiển thị thông tin ngày và tác giả */
+
+.info {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    /* Khoảng cách giữa phần date và author */
+    color: #bbb;
+    /* Màu xám nhạt */
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.date,
+.author {
+    display: flex;
+    align-items: center;
+    color: #bbb;
+    /* Màu xám nhạt */
+}
+
+.author {
+    margin-left: 10px;
+    /* Khoảng cách giữa author và description */
+}
+
+.date i,
+.author i {
+    margin-right: 5px;
+    /* Khoảng cách giữa icon và text */
+}
+
+.title {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.description {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.read-more {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    align-self: center; /* Centers the button horizontally */
+}
+
+.read-more:hover {
+    background-color: #0056b3;
+}
+
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px; /* Space between each pagination link */
+    margin: 20px 0;
+    font-size: 16px;
+}
+
+.pagination a {
+    text-decoration: none; /* Remove underline */
+    color: #333; /* Default text color */
+    padding: 8px 14px; /* Space inside each link */
+    border: 1px solid #ddd; /* Border for each link */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s, color 0.3s; /* Smooth hover effect */
+}
+
+.pagination a.active {
+    background-color: #007BFF; /* Active link background */
+    color: white; /* Active link text color */
+    border-color: #007BFF; /* Active link border color */
+}
+
+.pagination a:hover {
+    background-color: #0056b3; /* Hover background color */
+    color: white; /* Hover text color */
+}
+
+.pagination a:first-child,
+.pagination a:last-child {
+    font-weight: bold; /* Emphasize the arrows */
+    padding: 8px 12px; /* Slightly smaller padding for arrows */
+}
+
+.pagination a:first-child:hover,
+.pagination a:last-child:hover {
+    background-color: #ddd; /* Light hover effect for arrows */
+    color: #333; /* Text color on hover for arrows */
+}

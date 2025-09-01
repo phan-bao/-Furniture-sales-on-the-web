@@ -1,0 +1,88 @@
+  body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+
+    .container {
+        width: 80%;
+        margin: auto;
+        overflow: hidden;
+    }
+
+    .showcase {
+        min-height: 400px;
+        background: url('../Images/anh-khau-do-lon-mogi.jpg') no-repeat center center/cover;
+        text-align: center;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .showcase h1 {
+        font-size: 55px;
+        margin-bottom: 10px;
+    }
+
+    .showcase p {
+        font-size: 20px;
+    }
+
+    .collection {
+        display: flex;
+        justify-content: center;
+        padding-left: 130px;
+        align-items: center;
+        margin: 20px 0;
+        flex-wrap: wrap;
+    }
+
+    .collection-item {
+        background: #fff;
+        padding: 20px;
+        margin: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        width: 25%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+        text-align: center;
+    }
+
+    .collection-item img {
+        max-width: 100%;
+        border-bottom: 1px solid #ddd;
+        margin-bottom: 10px;
+    }
+
+    .collection-item h3 {
+        margin: 0 0 10px;
+        color: #000;
+    }
+
+    .collection-item p {
+        color: #000;
+    }
+
+    .collection-item:hover {
+        transform: translateY(-10px) scale(1.05);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .collection-item a {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+
+    .collection-item a:hover {
+        background-color: #0056b3;
+    }
+

@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website</title>
-    
+
     <!-- Thêm Google Fonts: Roboto -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    
+
     <!-- Liên kết đến CSS -->
     <link rel="stylesheet" href="css/footer.css"> <!-- CSS cho footer -->
 
     <!-- Thêm font-awesome để có các icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
+
 <body>
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-column logo-section">
                 <h3 class="footer-logo">Nội Thất</h3>
-                <p>Nội thất tinh tế không chỉ mang lại sự thoải mái mà còn tôn lên vẻ đẹp của không gian sống, nơi phong cách và tiện nghi hòa quyện với nhau.</p>
+                <p>Nội thất tinh tế không chỉ mang lại sự thoải mái mà còn tôn lên vẻ đẹp của không gian sống, nơi phong
+                    cách và tiện nghi hòa quyện với nhau.</p>
                 <div class="social-icons">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
@@ -33,7 +36,7 @@
                 <h3>Công Ty</h3>
                 <ul>
                     <li><a href="#">Về Chúng Tôi</a></li>
-                    <li><a href="#">Blog</a></li>
+                    <li><a href="Pages/blog.php">Blog</a></li>
                     <li><a href="#">Liên Hệ</a></li>
                 </ul>
             </div>
@@ -57,7 +60,7 @@
                 </ul>
             </div>
 
-            <div class="footer-column contact-info">
+            <div class="footer-column contact-information">
                 <h3>Thông Tin Liên Hệ</h3>
                 <p>0778 000 878</p>
                 <p>bxgangter@gmail.com</p>
@@ -67,8 +70,9 @@
 
         <div class="footer-bottom">
             <p>Copyright © 2024 Furniture. All Rights Reserved.</p>
-            
+
         </div>
     </footer>
 </body>
+
 </html>

@@ -1,0 +1,118 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.0em;
+}
+
+.collection-detail {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.product-item {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: calc(25% - 40px);
+    /* Giảm chiều rộng của ô sản phẩm */
+    position: relative;
+    box-sizing: border-box;
+}
+
+.product-item:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.product-item img {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+    max-width: 100%;
+}
+
+.product-item h4 {
+    color: #333;
+    font-size: 1.2em;
+    /* Giảm kích thước chữ */
+    margin: 10px 0;
+}
+
+.product-rating {
+    color: #f39c12;
+    font-size: 1em;
+    /* Giảm kích thước chữ */
+    margin-bottom: 10px;
+}
+
+.original-price {
+    color: #999;
+    font-size: 0.9em;
+    /* Giảm kích thước chữ */
+    text-decoration: line-through;
+}
+
+.current-price {
+    color: #e74c3c;
+    font-size: 1.2em;
+    /* Giảm kích thước chữ */
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.product-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.product-info span {
+    color: #555;
+    font-size: 0.8em;
+    /* Giảm kích thước chữ */
+}
+
+.discount-label {
+    background-color: #e74c3c;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 0.9em;
+    padding: 5px 10px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+ .close-icon {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            margin-top: 95px;
+            padding-right: 1430px;
+            font-size: 24px;
+            color: #f9f3f3;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close-icon:hover {
+            color: #e74c3c;
+        }

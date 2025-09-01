@@ -1,0 +1,573 @@
+/* Resetting default browser styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Container chính */
+.checkout-container {
+    display: flex;
+    flex-direction: column; /* Đặt thành column để navigation nằm trên cùng */
+    max-width: 900px;
+    margin: 30px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+/* Step Navigation Container */
+.step-navigation {
+    display: flex;
+    flex-direction: row; /* Hiển thị các bước theo hàng ngang */
+    justify-content: space-around; /* Cân đều các bước */
+    position: relative;
+    padding: 50px 20px; /* Khoảng cách trên dưới */
+    width: 100%; /* Chiếm toàn bộ chiều rộng */
+    min-height: 80px; /* Đặt chiều cao tối thiểu */
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #ddd; /* Thêm đường viền dưới để phân cách */
+}
+
+/* Vòng tròn số */
+.step-btn {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: none;
+    border: none;
+    color: #555;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    transition: color 0.3s ease;
+}
+
+.step-btn::before {
+    content: attr(data-step); /* Hiển thị số từ data-step */
+    width: 30px;
+    height: 30px;
+    background-color: #e0e0e0; /* Màu nền mặc định */
+    color: #333;
+    font-weight: bold;
+    border-radius: 50%; /* Tạo vòng tròn */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 5px; /* Khoảng cách giữa số và chữ */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+
+.step-btn.active::before {
+    background-color: #00796b; /* Nền xanh cho bước active */
+    color: #fff; /* Chữ trắng */
+}
+
+.step-btn.active {
+    color: #00796b; /* Màu chữ cho bước active */
+    font-weight: bold;
+}
+
+/* Main content của từng bước */
+.checkout-content {
+    flex: 1;
+    padding: 30px;
+}
+
+.checkout-step {
+    display: none;
+}
+
+.checkout-step.active {
+    display: block;
+}
+
+.checkout-content h2 {
+    color: #00796b;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Inputs và Labels */
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+input:focus, select:focus {
+    border-color: #00796b;
+    outline: none;
+}
+
+/* Nút điều khiển */
+.control-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+button {
+    background-color: #00796b;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+
+button[disabled] {
+    background-color: #ddd;
+    cursor: not-allowed;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .checkout-container {
+        flex-direction: column;
+    }
+
+    .step-navigation {
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 10px 0;
+        border-bottom: 1px solid #ddd;
+    }
+
+    /* Loại bỏ đường nối trong chế độ mobile nếu cần */
+    .step-navigation::before {
+        display: none;
+    }
+
+    /* Điều chỉnh vị trí vòng tròn số bước trong mobile */
+    .step-btn {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .checkout-content {
+        width: 100%;
+    }
+}
+/* CSS cho phần hiển thị sản phẩm */
+
+/* CSS cho Step 2: Thông tin khách hàng và địa chỉ giao hàng */
+#step-2 {
+    font-family: 'Arial', sans-serif;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+#step-2 h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: #333;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+#step-2 p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+#step-2 .address-checkboxes {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#step-2 .address-option {
+    display: flexbox;
+    align-items: flex-start;
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+#step-2 .address-option input[type="radio"] {
+    margin-right: 15px;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+#step-2 .address-option span {
+    flex-grow: 1;
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+
+#step-2 .address-option:hover {
+    background-color: #e9f5ff;
+    border-color: #007bff;
+}
+
+#step-2 button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+#step-2 button:hover {
+    background-color: #218838;
+}
+
+#step-2 button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+/* Scoped Styling for #step-1 */
+#step-1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Tiêu đề */
+#step-1 h3 {
+    margin-bottom: 25px;
+    color: #333333;
+    font-size: 1.8em;
+    text-align: center;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
+}
+
+/* Container cho tất cả các sản phẩm */
+#step-1 .checkout-items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Mỗi sản phẩm trong giỏ hàng */
+#step-1 .checkout-item {
+    display: flex;
+    flex-direction: row; /* Hiển thị ngang */
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#step-1 .checkout-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Hình ảnh sản phẩm */
+#step-1 .item-image {
+    flex: 0 0 150px; /* Chiếm 150px chiều rộng */
+    max-width: 150px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+}
+
+#step-1 .item-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+/* Thông tin sản phẩm */
+#step-1 .item-details {
+    flex: 1;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#step-1 .item-details .item-name {
+    margin: 0 0 10px 0;
+    font-size: 1.4em;
+    color: #333333;
+}
+
+#step-1 .item-details .item-info {
+    margin: 5px 0;
+    color: #555555;
+    font-size: 1em;
+}
+
+/* Phần Mã Giảm Giá */
+#step-1 .discount-section {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+#step-1 .discount-section input#discount-code {
+    padding: 10px 15px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 250px;
+    max-width: 100%;
+    transition: border-color 0.3s;
+}
+
+#step-1 .discount-section input#discount-code:focus {
+    border-color: #28a745;
+    outline: none;
+}
+
+#step-1 .discount-section .apply-discount-btn {
+    padding: 10px 20px;
+    background-color: #007bff; /* Màu xanh dương */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: -14px;
+}
+
+#step-1 .discount-section .apply-discount-btn:hover {
+    background-color: #0056b3; /* Màu xanh dương đậm hơn khi hover */
+}
+
+/* Tổng Tiền */
+#step-1 .checkout-total {
+    text-align: right;
+    font-size: 1.4em;
+    color: #333333;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* Nút Tiếp Tục */
+#step-1 .next-btn {
+    display: block;
+    width: 180px;
+    margin: 30px auto 0 auto;
+    padding: 12px 0;
+    background-color: #28a745; /* Màu xanh lá */
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#step-1 .next-btn:hover {
+    background-color: #218838; /* Màu xanh lá đậm hơn khi hover */
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    #step-1 .checkout-item {
+        flex-direction: column; /* Chuyển sang dọc trên màn hình nhỏ */
+        align-items: center;
+    }
+
+    #step-1 .item-image {
+        flex: 0 0 100%; /* Chiếm toàn bộ chiều rộng */
+        max-width: 100%;
+    }
+
+    #step-1 .item-details {
+        padding: 10px;
+        align-items: center;
+        text-align: center;
+    }
+
+    #step-1 .checkout-total {
+        text-align: center;
+    }
+
+    #step-1 .next-btn {
+        width: 100%;
+    }
+
+    /* Điều chỉnh phần mã giảm giá trên màn hình nhỏ */
+    #step-1 .discount-section {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    #step-1 .discount-section input#discount-code {
+        width: 100%;
+    }
+
+    #step-1 .discount-section .apply-discount-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    #step-1 h3 {
+        font-size: 1.5em;
+    }
+
+    #step-1 .checkout-item {
+        padding: 10px;
+    }
+
+    #step-1 .item-image {
+        max-height: 200px;
+    }
+
+    #step-1 .item-details .item-name {
+        font-size: 1.2em;
+    }
+
+    #step-1 .item-details .item-info {
+        font-size: 0.95em;
+    }
+
+    #step-1 .checkout-total {
+        font-size: 1.2em;
+    }
+
+    #step-1 .next-btn {
+        font-size: 1em;
+        padding: 10px 0;
+    }
+}
+
+/* Phần Thành Công Thanh Toán */
+.payment-success {
+    display: none; /* Ẩn mặc định, sẽ hiển thị khi thanh toán thành công */
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    border: 2px solid #28a745;
+    border-radius: 10px;
+    background-color: #e8f5e9;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.payment-success .success-icon {
+    font-size: 60px;
+    color: #28a745;
+    margin-bottom: 15px;
+    opacity: 0;
+    transform: scale(0.5);
+    animation: scaleUp 0.5s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+.payment-success h4 {
+    color: #2e7d32;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: slideDown 0.5s ease-out forwards;
+    animation-delay: 1s;
+}
+
+.payment-success p {
+    color: #555555;
+    font-size: 1.2em;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: slideUp 0.5s ease-out forwards;
+    animation-delay: 1.2s;
+}
+
+/* Keyframe Animations */
+
+/* Fade In Animation for the entire section */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Scale Up Animation for the success icon */
+@keyframes scaleUp {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Slide Down Animation for the heading */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Slide Up Animation for the paragraph */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

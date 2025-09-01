@@ -1,96 +1,125 @@
-html, body {
-    padding: 0;
+/* CSS cho Footer */
+.site-footer {
+    background-color: #0a2412;
+    color: #fff;
+    padding: 30px 20px; /* Giảm padding trên và dưới để footer thấp hơn */
     margin: 0;
-    height: 100%; /* Đảm bảo body chiếm toàn bộ chiều cao */
-}
-
-/* Đảm bảo rằng footer luôn nằm ở cuối trang */
-body {
+    border-top: 2px solid #f06827; /* Đường viền nổi bật trên cùng */
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.15); /* Đổ bóng để làm nổi bật */
+    border-radius: 20px 20px 0 0; /* Bo tròn góc trên của footer */
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-}
-
-.main-content {
-    flex: 1; /* Đảm bảo phần nội dung chính đẩy footer xuống dưới */
-}
-/* footer.css */
-.site-footer {
-    background-color: #154422;
-    color: white;
-    padding: 0px 0;
-    margin: 0;
+    align-items: center; /* Đảm bảo footer luôn được căn giữa */
 }
 
 .footer-container {
     display: flex;
-    justify-content: space-between;
-    max-width: 1000px;
-    margin: 0 auto;
     flex-wrap: wrap;
+    justify-content: center; /* Căn giữa tất cả cột bên trong footer */
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 40px; /* Giảm khoảng cách giữa các cột */
 }
 
 .footer-column {
     flex: 1;
-    margin: 0 15px;
+    min-width: 220px;
+    max-width: 300px;
+    margin-bottom: 15px; /* Giảm khoảng cách giữa các cột */
+    text-align: center; /* Căn giữa nội dung trong cột */
+    transition: transform 0.3s ease;
+}
+
+.footer-column:hover {
+    transform: translateY(-5px); /* Nhấc nhẹ cột khi hover */
 }
 
 .footer-column h3 {
-    font-size: 18px;
-    margin-bottom: 20px;
-    font-weight: 700;
+    font-size: 20px; /* Giảm kích thước tiêu đề */
+    font-weight: 600;
+    margin-bottom: 15px; /* Giảm khoảng cách dưới tiêu đề */
+    color: #f06827; /* Đổi màu tiêu đề để nổi bật */
+    text-transform: uppercase;
 }
 
 .footer-column ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .footer-column ul li {
-    margin-bottom: 10px;
+    margin-bottom: 10px; /* Giảm khoảng cách giữa các mục trong danh sách */
 }
 
 .footer-column ul li a {
-    color: white;
+    color: #aaa;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 14px; /* Giảm kích thước font của các liên kết */
+    transition: color 0.3s ease, padding-left 0.3s ease;
 }
 
 .footer-column ul li a:hover {
+    color: #fff;
+    padding-left: 5px; /* Thêm hiệu ứng di chuyển nhẹ sang trái khi hover */
     text-decoration: underline;
 }
 
+.logo-section {
+    max-width: 300px;
+    text-align: center; /* Căn giữa nội dung logo */
+}
+
 .logo-section p {
-    font-size: 14px;
-    line-height: 1.8;
+    font-size: 14px; /* Giảm kích thước văn bản */
+    line-height: 1.6; /* Giảm khoảng cách giữa các dòng */
+    color: #ccc;
+    margin-bottom: 15px; /* Giảm khoảng cách dưới */
+}
+
+.social-icons {
+    margin-top: 20px;
+    text-align: center; /* Đảm bảo biểu tượng mạng xã hội căn giữa */
 }
 
 .social-icons a {
     display: inline-block;
-    margin-right: 10px;
-    font-size: 18px;
-    color: white;
+    margin-right: 15px;
+    font-size: 22px;
+    color: #ccc;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .social-icons a:hover {
-    color: #f7b81d;
+    color: #f06827;
+    transform: scale(1.2) translateY(-5px); /* Phóng to nhẹ và nhấc lên khi hover */
+}
+
+.contact-contact-information p {
+    margin: 5px 0;
+    font-size: 15px;
+    color: #ccc;
+    line-height: 1.6;
 }
 
 .footer-bottom {
-    background-color: #f7b81d;
-    color: #154422;
+    background-color: #f06827;
+    color: #222;
     text-align: center;
-    padding: 15px 0;
-    margin: 0; /* Đảm bảo không có margin tạo ra khoảng trống */
+    padding: 15px; /* Giảm padding */
+    margin-top: 20px; /* Giảm khoảng cách giữa phần footer và phần bên dưới */
+    border-radius: 0 0 20px 20px; /* Bo tròn góc dưới */
 }
-
 
 .footer-bottom p {
     margin: 0;
+    font-size: 14px; /* Giảm kích thước chữ */
+    font-weight: 600;
+    letter-spacing: 0.5px; /* Thêm khoảng cách giữa các chữ */
 }
 
 .footer-settings {
-    margin-top: 10px;
+    margin-top: 8px; /* Giảm khoảng cách phần cài đặt */
 }
 
 .footer-settings span {
@@ -102,4 +131,22 @@ body {
 .footer-settings i {
     font-size: 12px;
     margin-left: 5px;
+}
+
+/* Điều chỉnh cho thiết bị di động */
+@media screen and (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        align-items: center; /* Đảm bảo các phần tử trong cột luôn căn giữa */
+        gap: 20px; /* Giảm khoảng cách giữa các cột */
+    }
+
+    .footer-column {
+        margin-bottom: 15px; /* Giảm margin dưới cột */
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
 }

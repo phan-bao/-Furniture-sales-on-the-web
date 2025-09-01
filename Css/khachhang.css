@@ -1,0 +1,141 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 15px 15px;  /* Giảm padding để làm nhỏ cột và hàng */
+    text-align: left;
+    font-size: 14px; /* Giảm kích thước font */
+    word-wrap: break-word;  /* Cho phép ngắt từ khi cần thiết */
+
+ 
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+.status-paid {
+    color: green;
+}
+
+.status-unpaid {
+    color: red;
+}
+
+.delivery-pending {
+    color: orange;
+}
+
+.delivery-done {
+    color: green;
+}
+
+.total-price {
+    text-align: right;
+}
+
+/* Tăng chiều cao của các hàng nếu nội dung xuống dòng nhiều */
+tbody tr {
+    height: auto; /* Đảm bảo các hàng có chiều cao tự động điều chỉnh */
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Styles for the "Create Order" button */
+.create-order-btn {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    padding: 8px 16px; /* Giảm kích thước padding của nút */
+    margin: 20px 0;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px; /* Giảm kích thước chữ */
+    text-decoration: none;
+}
+
+.create-order-btn:hover {
+    background-color: #218838;
+}
+
+/* Style for container holding search bar and create order button */
+.search-create-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+/* Style for search bar */
+.search-bar {
+    display: flex;
+    align-items: center;
+    padding: 0.6rem 0.8rem; /* Giảm padding của thanh tìm kiếm */
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-2);
+    box-shadow: var(--box-shadow);
+    flex-grow: 1;
+    margin-right: 1rem;
+}
+
+.search-bar input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 14px; /* Giảm kích thước chữ trong input */
+    padding: 0.4rem;
+    background-color: transparent;
+    color: var(--color-dark);
+}
+
+.search-bar span {
+    color: var(--color-info-dark);
+    font-size: 1.2rem; /* Giảm kích thước icon */
+    margin-left: 1rem;
+}
+
+.create-order-btn {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: var(--border-radius-2);
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.create-order-btn:hover {
+    background-color: var(--color-success);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.create-order-btn:active {
+    background-color: var(--color-primary);
+    transform: translateY(0);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,739 @@
+
+
+/* detail */
+.Text_blog {
+    margin-right: 600px;
+    margin-top: 60px;
+    width: 250%;
+    padding: 20px;
+}
+
+.editor-container {
+    max-width: 800px;
+
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: auto;
+    position: absolute;
+}
+
+label {
+    display: block;
+    /* Đảm bảo label chiếm toàn bộ chiều rộng */
+    margin-bottom: 8px;
+    /* Thêm khoảng cách bên dưới label */
+    padding-top: 10px;
+    /* Thêm khoảng cách phía trên label */
+    font-weight: bold;
+    /* Đậm chữ cho label (tùy chọn) */
+    font-size: 1rem;
+    /* Kích thước chữ (tùy chọn) */
+}
+
+.backround_blog {
+
+    flex-wrap: wrap;
+    /* Đảm bảo không bị vỡ layout khi màn hình nhỏ */
+}
+
+.backround_blog .h1 {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Styling for toolbar container */
+.toolbar {
+    z-index: 10;
+    /* Đảm bảo thanh toolbar nằm ở trên các phần tử khác */
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    align-items: center;
+}
+
+/* Custom buttons and select in the toolbar */
+.toolbar button,
+.toolbar select {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toolbar button:hover,
+.toolbar select:hover {
+    background-color: #e0e0e0;
+    border-radius: 5px;
+}
+
+/* Icon styles */
+.toolbar button span.material-icons-outlined {
+    font-size: 20px;
+    pointer-events: auto;
+}
+
+/* Styling cho custom select và input */
+.custom-select {
+    position: relative;
+    width: 150px;
+}
+
+.custom-select input,
+.custom-select select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    appearance: none;
+    background-color: white;
+    cursor: pointer;
+    background-image: none;
+    font-size: 14px;
+    color: #363949;
+}
+
+.custom-select input::placeholder {
+    color: #999;
+}
+
+.custom-select select:hover,
+.custom-select input:hover {
+    border-color: #555;
+}
+
+/* Mũi tên thả xuống */
+.custom-select::after {
+    content: '\25BC';
+    /* Ký tự Unicode của mũi tên */
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 12px;
+    color: #555;
+}
+
+/* Input focus effect */
+.custom-select input:focus,
+.custom-select select:focus {
+    border-color: #888;
+}
+
+/* Input and textarea for content */
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 14px;
+    color: #363949;
+}
+
+textarea {
+    resize: none;
+    height: 150px;
+}
+
+textarea#content {
+    height: 250px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+}
+
+/* Đảm bảo các phần tử nằm ngang đều nhau */
+.dropdown-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 1px;
+    margin-top: 10px;
+}
+
+
+/* phần >format_list_bulleted */
+.custom-dropdown {
+    position: relative;
+    display: inline-block;
+    width: 80px; /* Kích thước nút */
+}
+
+/* Nút chính */
+#bullet-dropdown-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    cursor: pointer;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#bullet-dropdown-button:hover {
+    background-color: #f9f9f9;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.arrow-down {
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+/* Phần dropdown menu */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%; /* Hiển thị ngay bên dưới nút */
+    left: 0;
+    background-color: #fff;
+    width: 240px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* Bullet options layout */
+.bullet-options {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Hiển thị 4 nút mỗi hàng */
+    gap: 8px;
+}
+
+/* Style cho từng nút bullet */
+.bullet-option {
+    width: 40px; /* Chiều ngang 40px */
+    height: 40px; /* Chiều cao 40px */
+    border-radius: 5px; /* Bo tròn góc */
+    border: 1px solid #ddd;
+    background-color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bullet-option:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    border-color: #aaa;
+    background-color: #f0f0f0;
+}
+
+/* Nút "None" có style đặc biệt */
+.bullet-option[data-bullet="none"] {
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 1px dashed #ccc;
+    color: #555;
+}
+
+/* Hiển thị menu khi được bật */
+.dropdown-content.show {
+    display: block;
+}
+
+
+/* Phần numbered-dropdown-button */
+
+.custom-dropdown {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+}
+
+#numbered-dropdown-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background-color 0.2s ease;
+}
+
+#numbered-dropdown-button:hover {
+    background-color: #f0f0f0;
+}
+
+.arrow-down {
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+#numbered-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%; /* Hiển thị ngay bên dưới nút */
+    left: 0;
+    background-color: #fff;
+    width: 180px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#numbered-dropdown-menu h3 {
+    margin: 0 0 10px;
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+}
+
+.numbering-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Hiển thị 2 button mỗi hàng */
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.numbering-option {
+    width: 70px;
+    height: 50px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.numbering-option:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    border-color: #aaa;
+    background-color: #f9f9f9;
+}
+
+/* Nút "None" có style đặc biệt */
+.numbering-option[data-numbering="none"] {
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 1px dashed #ccc;
+    color: #555;
+}
+
+/* Khi menu được mở */
+#numbered-dropdown-menu.show {
+    display: block;
+}
+
+
+
+
+
+/* Container chứa các nút được căn ngang */
+.button-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px; /* Khoảng cách giữa các nút */
+    padding: 10px;
+
+}
+
+/* Styling cho các nút trong button-container */
+.button-container button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button-container button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    background-color: #f0f0f0;
+}
+
+/* Icon styling */
+.button-container button span.material-icons-outlined {
+    font-size: 20px;
+    color: #363949;
+}
+
+/* Đảm bảo căn chỉnh container trên các màn hình nhỏ */
+@media (max-width: 768px) {
+    .button-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+/* Font dropdown styling */
+.font-dropdown {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+}
+
+.font-dropdown select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    appearance: none;
+    background-image: none;
+}
+
+.font-dropdown::after {
+    content: '\25BC';
+    /* Ký tự Unicode của mũi tên xuống */
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 12px;
+    color: #555;
+}
+
+.font-dropdown select:focus {
+    border-color: #888;
+}
+
+/* Ẩn bảng màu mặc định */
+.color-picker,
+#line-height-options {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+/* Hiển thị bảng màu ngay dưới nút khi di chuột vào */
+#text-color-button:hover+#text-color-picker,
+#bg-color-button:hover+#bg-color-picker {
+    display: block;
+    top: 100%;
+}
+
+/* Đặt vị trí cho bảng màu để hiển thị dưới nút bấm */
+#text-color-picker,
+#bg-color-picker {
+    margin-top: 5px;
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    /* 5 ô màu mỗi hàng */
+    gap: 5px;
+    /* Khoảng cách giữa các ô màu */
+}
+
+/* Định dạng từng ô màu trong bảng màu */
+.color-option {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: inline-block;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 10px;
+    color: black;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, transform 0.1s ease;
+}
+
+.color-option:hover {
+    border: 1px solid black;
+    transform: scale(1.1);
+}
+
+/* Định dạng ô "None" để trông đều với các ô màu khác */
+.color-option[data-color="inherit"] {
+    background-color: #f5f5f5;
+    width: 10px;
+    height: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #333;
+    
+    font-size: 10px;
+    border: 1px dashed #aaa;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* line height options  */
+
+/* Cấu hình mặc định, ẩn bảng line-height */
+#line-height-options {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    margin-top: 5px;
+    /* Khoảng cách so với nút */
+}
+
+/* Đảm bảo từng tùy chọn có khoảng cách */
+#line-height-options .line-option {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    text-align: left;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}
+
+#line-height-options .line-option:hover {
+    background-color: #e0e0e0;
+    border-radius: 5px;
+}
+
+
+
+/*cuối*/
+.summary-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* Khoảng cách giữa hai thẻ summary */
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    /* Căn giữa container */
+    margin-top: 550px;
+    margin-right: 1000px;
+    position: absolute;
+}
+
+.summary {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    box-sizing: border-box;
+}
+
+.summary p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.summary a {
+    color: #6C9BCF;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 230px;
+}
+
+.sumary_TT {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    float: right;
+    /* Căn phải liên kết "Thêm tóm tắt" */
+}
+
+.sumary_KQ {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    float: right;
+    /* Căn phải liên kết "Tùy chỉnh SEO" */
+}
+
+.sumary_TT:hover,
+.sumary_KQ:hover {
+    text-decoration: underline;
+}
+
+/* Đảm bảo bố cục không bị thay đổi ở các kích thước nhỏ hơn */
+@media (max-width: 900px) {
+    .summary {
+        max-width: 100%;
+        /* Chiều rộng tối đa bằng 100% */
+        /* padding: 10px; */
+        /* Điều chỉnh khoảng đệm */
+    }
+}
+
+
+/*phần bên phải*/
+.containers {
+    width: 300px;
+    /* Độ rộng của khối chứa */
+    margin-left: auto;
+    margin-right: auto;
+    margin-left: 850px;
+
+
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    position: absolute;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+}
+
+input[type="radio"] {
+    -webkit-appearance: radio;
+    /* Đảm bảo giao diện chuẩn của radio button */
+    -moz-appearance: radio;
+    appearance: radio;
+    margin-right: 10px;
+    /* Thêm khoảng cách giữa nút radio và văn bản */
+    cursor: pointer;
+    /* Thêm con trỏ để biểu thị có thể click */
+}
+
+label {
+    font-size: 1rem;
+    /* Đảm bảo kích thước văn bản dễ đọc */
+    cursor: pointer;
+}
+
+input[type="datetime-local"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.image_path {
+    display: block;
+    width: 100%;
+    height: 150px;
+    border: 2px dashed #ccc;
+    background-color: #fff;
+    text-align: center;
+    line-height: 150px;
+    color: #888;
+    cursor: pointer;
+    margin-bottom: 10px;
+    position: relative;
+    overflow: hidden; /* Thêm vào để đảm bảo ảnh không tràn ra ngoài */
+}
+
+.image_path img {
+    max-width: 100%;
+    height: 100%; /* Đảm bảo ảnh chiếm hết chiều cao của container mà không bị biến dạng */
+    object-fit: contain; /* Đảm bảo ảnh không bị biến dạng và vừa với kích thước container */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.image_path:hover {
+    background-color: #f0f0f0;
+}
+
+
+
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.buttons {
+    text-align: center;
+}
+
+.cancel-btn,
+.save-btn {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+}
+
+.cancel-btn {
+    background-color: #6c757d;
+}
+
+.cancel-btn:hover,
+.save-btn:hover {
+    opacity: 0.9;
+}
+
+
+
+
+
+

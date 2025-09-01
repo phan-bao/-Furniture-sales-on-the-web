@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="../Css/taokhuyenmai.css">
+    <title>Tạo Mã Khuyến Mãi</title>
+</head>
+
+<body>
+    <div class="container">
+        <?php include('menu.php'); ?>
+
+        <!-- Main Content -->
+        <main>
+            <h1>Tạo Mã Khuyến Mãi</h1>
+
+            <form action="taomakhuyenmai.php" method="POST" class="create-promotion-form">
+                <div class="form-group">
+                    <label for="ten_km">Tên Khuyến Mãi</label>
+                    <input type="text" id="ten_km" name="ten_km" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="gia_tri_so_tien">Giá Trị Số Tiền</label>
+                    <input type="number" id="gia_tri_so_tien" name="gia_tri_so_tien" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="ti_le_phan_tram">Tỉ Lệ Phần Trăm</label>
+                    <input type="number" id="ti_le_phan_tram" name="ti_le_phan_tram" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="thoi_gian_bat_dau">Thời Gian Bắt Đầu</label>
+                    <input type="datetime-local" id="thoi_gian_bat_dau" name="thoi_gian_bat_dau" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="thoi_gian_ket_thuc">Thời Gian Kết Thúc</label>
+                    <input type="datetime-local" id="thoi_gian_ket_thuc" name="thoi_gian_ket_thuc" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="trang_thai">Trạng Thái</label>
+                    <select id="trang_thai" name="trang_thai" required>
+                        <option value="Đang áp dụng">Đang áp dụng</option>
+                        <option value="Hết hạn">Hết hạn</option>
+                        <option value="Tạm dừng">Tạm dừng</option>
+                    </select>
+                </div>
+
+                <button type="submit" name="submit" class="create-promotion-btn">Tạo Mã Khuyến Mãi</button>
+            </form>
+
+            <!-- Kết quả xử lý sau khi tạo mã -->
+            <?php
+            // Kiểm tra nếu form đã được submit
+            if (isset($_POST['submit'])) {
+                // Kết nối đến cơ sở dữ liệu
+                $servername = "localhost";
+                $username = "root";
+                $password = "";
+                $dbname = "furniture_store";
+
+                // Tạo kết nối
+                $conn = new mysqli($servername, $username, $password, $dbname);
+
+                // Kiểm tra kết nối
+                if ($conn->connect_error) {
+                    die("Kết nối thất bại: " . $conn->connect_error);
+                }
+
+                // Lấy dữ liệu từ form
+                $ten_km = $_POST['ten_km'];
+                $gia_tri_so_tien = $_POST['gia_tri_so_tien'];
+                $ti_le_phan_tram = $_POST['ti_le_phan_tram'];
+                $thoi_gian_bat_dau = $_POST['thoi_gian_bat_dau'];
+                $thoi_gian_ket_thuc = $_POST['thoi_gian_ket_thuc'];
+                $trang_thai = $_POST['trang_thai'];
+
+                // Truy vấn để thêm mã khuyến mãi vào cơ sở dữ liệu
+                $sql = "INSERT INTO ma_khuyen_mai (ten_km, gia_tri_so_tien, ti_le_phan_tram, thoi_gian_bat_dau, thoi_gian_ket_thuc, trang_thai) 
+                        VALUES ('$ten_km', '$gia_tri_so_tien', '$ti_le_phan_tram', '$thoi_gian_bat_dau', '$thoi_gian_ket_thuc', '$trang_thai')";
+
+                if ($conn->query($sql) === TRUE) {
+                    echo "<p>Mã khuyến mãi đã được tạo thành công!</p>";
+                } else {
+                    echo "Lỗi: " . $sql . "<br>" . $conn->error;
+                }
+
+                // Đóng kết nối
+                $conn->close();
+            }
+            ?>
+
+        </main>
+    </div>
+
+</body>
+
+</html>

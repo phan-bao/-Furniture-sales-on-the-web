@@ -1,0 +1,698 @@
+/* Thiết lập chung cho trang */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+    overflow-x: hidden;
+    overflow-y: auto;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    width: 100%;
+    background-color: #37474f;
+    color: #fff;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+}
+.user-info {
+    background: linear-gradient(to right, #00796b, #064338); /* Nền gradient xanh ngọc đậm */
+    color: #ffffff; /* Màu chữ trắng */
+    padding: 30px 40px; /* Khoảng cách bên trong */
+    border-radius: 15px; /* Bo tròn viền */
+    text-align: center; /* Canh giữa nội dung */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Đổ bóng sâu hơn */
+    margin-bottom: 30px; /* Khoảng cách với phần bên dưới */
+    animation: fadeIn 0.8s ease; /* Hiệu ứng mờ dần */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hiệu ứng nổi lên nhẹ khi hover */
+.user-info:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
+
+/* Hiệu ứng viền ánh sáng */
+.user-info::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, #ffffff33, #ffffff66, #ffffff33);
+    animation: shimmer 2s infinite linear;
+}
+
+/* Animation shimmer (ánh sáng chạy) */
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.user-info .greeting {
+    font-size: 20px; /* Kích thước chữ nhỏ hơn */
+    font-weight: 300; /* Chữ mỏng nhẹ */
+    margin-bottom: 5px; /* Khoảng cách dưới */
+    text-transform: uppercase; /* Chữ viết hoa */
+    letter-spacing: 1.5px; /* Tăng khoảng cách giữa các chữ cái */
+    color: #e0f2f1; /* Màu chữ nhẹ hơn */
+}
+
+.user-info .customer-name {
+    font-size: 28px; /* Chữ lớn hơn */
+    font-weight: 700; /* Chữ đậm */
+    margin-top: 0; /* Không có khoảng cách trên */
+    text-transform: capitalize; /* Viết hoa chữ cái đầu */
+    color: #ffffff; /* Màu chữ trắng */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Đổ bóng chữ */
+}
+
+/* Container chính */
+.account-container {
+    display: flex;
+    max-width: 1400px;
+    width: 100%;
+    margin: 20px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    animation: fadeIn 0.5s ease;
+    min-height: 80vh;
+    box-sizing: border-box;
+}
+
+/* Sidebar (Thanh bên trái) */
+.sidebar {
+    width: 250px;
+    background: linear-gradient(145deg, #37474f, #263238);
+    color: #fff;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 15px 0 0 15px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    transition: transform 0.3s ease;
+}
+
+.sidebar .user-info {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.sidebar .user-info img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar .user-info h2 {
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+    margin: 0;
+}
+
+.sidebar .menu {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+.sidebar .menu li {
+    margin: 15px 0;
+}
+
+.sidebar .menu li a {
+    display: block;
+    padding: 12px 20px;
+    font-size: 16px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.sidebar .menu li a:hover {
+    background-color: #607d8b;
+    transform: scale(1.02);
+}
+
+/* Nội dung (Content) */
+.content {
+    flex: 1;
+    padding: 40px 30px;
+    background-color: #fafafa;
+    border-radius: 0 15px 15px 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    min-width: 70%;
+    box-sizing: border-box;
+}
+
+/* Phần thông tin cá nhân */
+#personal-info {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#personal-info p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+
+#edit-info-btn {
+    background-color: #00796b;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 20px;
+}
+
+#edit-info-btn:hover {
+    background-color: #004d40;
+    transform: scale(1.03);
+}
+
+/* Form chỉnh sửa thông tin */
+#edit-info-form {
+    margin-top: 20px;
+}
+
+#edit-info-form input {
+    width: 80%;
+    max-width: 500px;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #f1f1f1;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+#edit-info-form input:focus {
+    border-color: #00796b;
+    background-color: #fff;
+}
+
+#edit-info-form button {
+    background: #00796b;
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 25px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px;
+}
+
+#edit-info-form button:hover {
+    background-color: #004d40;
+    transform: scale(1.03);
+}
+
+/* Định dạng chung cho phần Bảo mật */
+#security {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+#security h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #37474f;
+    margin-bottom: 20px;
+}
+
+/* Thẻ h4 cho tiêu đề thay đổi mật khẩu */
+#security .security-card h4 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #37474f;
+    margin-bottom: 15px;
+}
+
+/* Định dạng cho form trong phần bảo mật */
+#security .security-card form {
+    display: flex;
+    flex-direction: column;
+
+    margin: 0;
+    padding: 0;
+}
+
+/* Định dạng cho các label */
+#security .security-card form label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+/* Định dạng cho các input password */
+#security .security-card form input[type="password"] {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #333;
+    background-color: #fafafa;
+    transition: border-color 0.3s ease;
+}
+
+/* Thêm hiệu ứng cho các input khi focus */
+#security .security-card form input[type="password"]:focus {
+    border-color: #009688;
+    outline: none;
+}
+
+/* Định dạng cho button */
+#security .security-card form button {
+    padding: 12px 20px;
+    background-color: #009688;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Thay đổi màu khi hover trên button */
+#security .security-card form button:hover {
+    background-color: #00796b;
+}
+
+/* Định dạng chung cho các input trong các form */
+input[type="text"], input[type="email"], input[type="password"], select, textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #333;
+    background-color: #fafafa;
+    transition: border-color 0.3s ease;
+}
+
+/* Hiệu ứng focus cho tất cả các input */
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, select:focus, textarea:focus {
+    border-color: #009688;
+    outline: none;
+}
+
+
+/* Định dạng cho nút submit */
+#security .security-card form button {
+    padding: 12px;
+    background-color: #009688;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#security .security-card form button:hover {
+    background-color: #00796b;
+}
+
+/* Định dạng cho thông báo lỗi */
+#error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* Đơn hàng */
+#orders ul {
+    list-style: none;
+    padding: 0;
+    margin:0;
+}
+
+#orders ul li {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    font-size:16px;
+    color:#333;
+}
+
+/* Địa chỉ */
+#addresses h3 {
+    font-size:18px;
+    margin-bottom:15px;
+}
+
+#addresses table {
+    width:100%;
+    border-collapse:collapse;
+    margin-bottom:20px;
+    font-size:14px;
+    border:none;
+}
+
+#addresses th, #addresses td {
+    border-bottom:1px solid #ddd;
+    padding:10px;
+    text-align:left;
+    vertical-align:middle;
+}
+
+#addresses th {
+    background:#f7f7f7;
+    font-weight:600;
+}
+
+#addresses .action-btn {
+    background: #00796b;
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 25px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px;
+
+}
+
+#addresses .action-btn:hover {
+    background-color: #004d40;
+    transform: scale(1.03);
+}
+
+#addresses #add_address_form {
+    background:#f8f9fa;
+    padding:10px;
+    border:none;
+    border-radius:4px;
+    margin-top:10px;
+    box-sizing:border-box;
+}
+
+#addresses #add_address_form h3 {
+    font-size:16px;
+    font-weight:600;
+    margin-bottom:10px;
+}
+
+#addresses #add_address_form input[type="text"] {
+    width:100%;
+    padding:8px;
+    border:1px solid #ccc;
+    border-radius:4px;
+    margin-bottom:10px;
+    font-size:14px;
+}
+
+#addresses #add_address_form button[name="them_dia_chi"] {
+    background:#00796b;
+    color:#fff;
+    padding:8px 12px;
+    border:none;
+    border-radius:4px;
+    font-size:14px;
+    cursor:pointer;
+    transition:background-color 0.3s ease;
+}
+
+#addresses #add_address_form button[name="them_dia_chi"]:hover {
+    background:#004d40;
+}
+
+#addresses button[type="button"] {
+    background:#00796b;
+    color:#fff;
+    padding:8px 12px;
+    border:none;
+    border-radius:25px;
+    font-size:14px;
+    cursor:pointer;
+    transition:background-color 0.3s ease;
+    margin-bottom:10px;
+}
+
+#addresses button[type="button"]:hover {
+    background:#004d40;
+}
+
+/* Notification */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    z-index: 9999;
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.notification.success {
+    background-color: #4caf50;
+    color: white;
+}
+
+.notification.error {
+    background-color: #f44336;
+    color: white;
+}
+
+#address_suggestions {
+    position: absolute;
+    background-color: #fff;
+    border:none;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Hiệu ứng fadeIn */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+#addresses #edit_address_form {
+    background:#f8f9fa;
+    padding:10px;
+    border:none;
+    border-radius:4px;
+    margin-top:10px;
+    box-sizing:border-box;
+}
+
+#addresses #edit_address_form h3 {
+    font-size:16px;
+    font-weight:600;
+    margin-bottom:10px;
+}
+
+#addresses #edit_address_form input[type="text"] {
+    width:100%;
+    padding:8px;
+    border:1px solid #ccc;
+    border-radius:4px;
+    margin-bottom:10px;
+    font-size:14px;
+}
+
+#addresses #edit_address_form button[name="update_dia_chi"] {
+    background:#00796b;
+    color:#fff;
+    padding:8px 12px;
+    border:none;
+    border-radius:4px;
+    font-size:14px;
+    cursor:pointer;
+    transition:background-color 0.3s ease;
+}
+
+#addresses #edit_address_form button[name="update_dia_chi"]:hover {
+    background:#004d40;
+}
+
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 20px;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    animation: fadeIn 0.5s ease;
+}
+
+.notification.success {
+    background-color: #4caf50; /* Xanh lá cho thông báo thành công */
+    color: white;
+}
+
+.notification.error {
+    background-color: #f44336; /* Đỏ cho thông báo lỗi */
+    color: white;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+ /* Tổng thể phần đơn hàng */
+ #orders {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#orders h3 {
+    color: #ff5722;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#orders ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Mỗi đơn hàng */
+#orders li {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 300px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Tiêu đề đơn hàng */
+#orders li strong {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Thông tin đơn hàng */
+#orders li div {
+    width: 100%;
+    margin-top: 8px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+/* Trạng thái giao hàng */
+.status {
+    padding: 5px 10px;
+    border-radius: 16px;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-top: 10px;
+    display: inline-block;
+    text-align: center;
+}
+
+.status.shipping {
+    background-color: #ffc107;
+    color: #fff;
+}
+
+.status.delivered {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.status.cancelled {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+/* Tổng tiền */
+.total-price {
+    margin-top: 15px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #ff5722;
+    text-align: center;
+}

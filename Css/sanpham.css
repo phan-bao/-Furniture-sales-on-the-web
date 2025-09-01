@@ -1,0 +1,422 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700;800&display=swap');
+
+:root{
+    --color-primary: #6C9BCF;
+    --color-danger: #FF0060;
+    --color-success: #1B9C85;
+    --color-warning: #F7D060;
+    --color-white: #fff;
+    --color-info-dark: #7d8da1;
+    --color-dark: #363949;
+    --color-light: rgba(132, 139, 200, 0.18);
+    --color-dark-variant: #677483;
+    --color-background: #f6f6f9;
+
+    --card-border-radius: 2rem;
+    --border-radius-1: 0.4rem;
+    --border-radius-2: 1.2rem;
+
+    --card-padding: 1.8rem;
+    --padding-1: 1.2rem;
+
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    appearance: 0;
+    border: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 14px;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.88rem;
+    user-select: none;
+    overflow-x: hidden;
+    color: var(--color-dark);
+    background-color: var(--color-background);
+}
+
+a{
+    color: var(--color-dark);
+}
+
+img{
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+h1{
+    font-weight: 800;
+    font-size: 1.8rem;
+}
+
+h2{
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+h3{
+    font-weight: 500;
+    font-size: 0.87rem;
+}
+
+small{
+    font-size: 0.76rem;
+}
+
+p{
+    color: var(--color-dark-variant);
+}
+
+b{
+    color: var(--color-dark);
+}
+
+.text-muted{
+    color: var(--color-info-dark);
+}
+
+.primary{
+    color: var(--color-primary);
+}
+
+.danger{
+    color: var(--color-danger);
+}
+
+.success{
+    color: var(--color-success);
+}
+
+.warning{
+    color: var(--color-warning);
+}
+
+.container{
+    display: grid;
+    width: 96%;
+    margin: 0 auto;
+    gap: 1.8rem;
+    grid-template-columns: 12rem auto 23rem;
+}
+
+aside{
+    height: 100vh;
+}
+
+aside .toggle{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.4rem;
+}
+
+aside .toggle .logo{
+    display: flex;
+    gap: 0.5rem;
+}
+
+aside .toggle .logo img{
+    width: 2rem;
+    height: 2rem;
+}
+
+aside .toggle .close{
+    padding-right: 1rem;
+    display: none;
+}
+
+aside .sidebar{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-white);
+    box-shadow: var(--box-shadow);
+    border-radius: 15px;
+    height: 88vh;
+    position: relative;
+    top: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+aside .sidebar:hover{
+    box-shadow: none;
+}
+
+aside .sidebar a{
+    display: flex;
+    align-items: center;
+    color: var(--color-info-dark);
+    height: 3.7rem;
+    gap: 1rem;
+    position: relative;
+    margin-left: 2rem;
+    transition: all 0.3s ease;
+}
+
+aside .sidebar a span{
+    font-size: 1.6rem;
+    transition: all 0.3s ease;
+}
+
+aside .sidebar a:last-child{
+    position: absolute;
+    bottom: 2rem;
+    width: 100%;
+}
+
+aside .sidebar a.active{
+    width: 100%;
+    color: var(--color-primary);
+    background-color: var(--color-light);
+    margin-left: 0;
+}
+
+aside .sidebar a.active::before{
+    content: '';
+    width: 6px;
+    height: 18px;
+    background-color: var(--color-primary);
+}
+
+aside .sidebar a.active span{
+    color: var(--color-primary);
+    margin-left: calc(1rem - 3px);
+}
+
+aside .sidebar a:hover{
+    color: var(--color-primary);
+}
+
+aside .sidebar a:hover span{
+    margin-left: 0.6rem;
+}
+
+aside .sidebar .message-count{
+    background-color: var(--color-danger);
+    padding: 2px 6px;
+    color: var(--color-white);
+    font-size: 11px;
+    border-radius: var(--border-radius-1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+.status-paid {
+    color: green;
+}
+
+.status-unpaid {
+    color: red;
+}
+
+.delivery-pending {
+    color: orange;
+}
+
+.delivery-done {
+    color: green;
+}
+
+.total-price {
+    text-align: right;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Styles for the "Create Order" button */
+.create-order-btn {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    margin: 20px 0;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.create-order-btn:hover {
+    background-color: #218838;
+}
+/* Style for container holding search bar and create order button */
+.search-create-container {
+    display: flex;
+    justify-content: space-between; /* Căn đều khoảng cách giữa các phần tử */
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+/* Style for search bar */
+.search-bar {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-2);
+    box-shadow: var(--box-shadow);
+    flex-grow: 1; /* Thanh tìm kiếm chiếm không gian còn lại */
+    margin-right: 1rem;
+}
+
+.search-bar input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    padding: 0.5rem;
+    background-color: transparent;
+    color: var(--color-dark);
+}
+
+.search-bar span {
+    color: var(--color-info-dark);
+    font-size: 1.5rem;
+    margin-left: 1rem;
+}
+
+/* Style for create order button */
+.create-order-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.create-order-btn:hover {
+    background-color: #218838;
+}
+/* Style for create order button */
+.create-order-btn {
+    background-color: var(--color-primary); /* Màu chính */
+    color: var(--color-white); /* Màu chữ trắng */
+    padding: 12px 24px; /* Tăng kích thước padding */
+    border: none;
+    cursor: pointer;
+    border-radius: var(--border-radius-2); /* Bo tròn góc */
+    font-size: 1rem; /* Tăng kích thước chữ */
+    text-decoration: none;
+    font-weight: 600; /* Tăng độ đậm của chữ */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Thêm hiệu ứng */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+}
+
+.create-order-btn:hover {
+    background-color: var(--color-success); /* Đổi màu khi hover */
+    transform: translateY(-3px); /* Hiệu ứng nổi khi hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Tăng đổ bóng khi hover */
+}
+
+.create-order-btn:active {
+    background-color: var(--color-primary); /* Giữ màu chính khi nhấn */
+    transform: translateY(0); /* Trở về vị trí ban đầu khi nhấn */
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1); /* Giảm đổ bóng khi nhấn */
+}
+
+/* CSS cho menu con */
+.submenu {
+    display: none;
+    padding-left: 20px;
+}
+
+.submenu a {
+    font-size: 0.9em;
+}
+
+.submenu.show {
+    display: block;
+}
+
+/* CSS cho mũi tên */
+.arrow-icon {
+    font-size: 1em;
+    transition: transform 0.3s;
+    margin-left: auto;
+}
+
+.rotate {
+    transform: rotate(90deg);
+}
+/* CSS cho nút Sửa và Xóa */
+.edit-btn, .delete-btn {
+    margin-right: 10px;
+    color: #007bff; /* Màu cho nút Sửa */
+    text-decoration: none;
+}
+
+.delete-btn {
+    color: #dc3545; /* Màu cho nút Xóa */
+}
+
+.edit-btn:hover, .delete-btn:hover {
+    color: #0056b3; /* Màu khi hover */
+    opacity: 0.7;
+}
+
+
+/* Toast Notification Style */
+.toast {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #28a745;
+    color: white;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+    opacity: 0;
+    transition: opacity 0.5s ease, visibility 0s linear 0.5s;
+}
+
+.toast.show {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}

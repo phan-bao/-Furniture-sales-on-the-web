@@ -1,14 +1,28 @@
-/* Căn chỉnh toàn bộ phần slider */
+body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/***************************************************************************************************************************************************************************************************************/
+
+
+/* CSS cho phần hero-slider */
 .hero-slider {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 50px 100px;
     background-color: #f7f7f7;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+    position: relative;
+    overflow: hidden;
 }
 
 .hero-content {
     max-width: 50%;
+    text-align: left;
 }
 
 .subtitle {
@@ -24,7 +38,7 @@ h1 {
 }
 
 h1 span {
-    color: #154422; /* Màu xanh đậm */
+    color: #154422;
 }
 
 .description {
@@ -35,6 +49,9 @@ h1 span {
 
 .hero-buttons {
     margin: 30px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .btn-shop-now {
@@ -44,7 +61,12 @@ h1 span {
     text-decoration: none;
     font-size: 16px;
     border-radius: 5px;
-    margin-right: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-shop-now:hover {
+    background-color: #f7b81d;
+    transform: translateY(-5px);
 }
 
 .btn-view-products {
@@ -54,63 +76,762 @@ h1 span {
     text-decoration: none;
     font-size: 16px;
     border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
-.ratings {
-    display: flex;
-    align-items: center;
-    margin-top: 30px;
+.btn-view-products:hover {
+    background-color: #333;
+    color: #fff;
+    transform: translateY(-5px);
 }
 
-.ratings img {
-    width: 150px;
-    height: auto;
-    margin-right: 15px;
+/* CSS cho slider */
+.slider-container {
+    flex: 1;
+    max-width: 50%;
+    overflow: hidden;
+    position: relative;
 }
 
-/* Chỉnh lại phần slider-items để hiển thị theo hàng ngang */
 .slider-items {
     display: flex;
-    transition: transform 0.5s ease;
-    gap: 20px; /* Khoảng cách giữa các slider-item */
-    justify-content: flex-start; /* Đẩy các hình ảnh sang bên trái */
-    padding-left: 10px; /* Điều chỉnh giá trị này để di chuyển sang trái nhiều hơn */
+    gap: 20px; /* Khoảng cách giữa các ảnh */
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* Đảm bảo hình ảnh trong slider có kích thước khác nhau để tạo hiệu ứng nhấp nhô */
-.slider-item img {
-    width: 100%; /* Chiều rộng tự động điều chỉnh theo .slider-item */
-    object-fit: cover; /* Cắt ảnh để phù hợp với chiều rộng và chiều cao */
-    border-radius: 10px; /* Bo góc cho hình ảnh */
-}
-
-/* Điều chỉnh chiều cao của các hình ảnh để tạo hiệu ứng nhấp nhô */
-.slider-item:nth-child(1) img {
-    height: 300px; /* Chiều cao hình ảnh đầu tiên */
-}
-
-.slider-item:nth-child(2) img {
-    height: 350px; /* Chiều cao hình ảnh thứ hai */
-}
-
-.slider-item:nth-child(3) img {
-    height: 250px; /* Chiều cao hình ảnh thứ ba */
-}
-
-.slider-item:nth-child(4) img {
-    height: 400px; /* Chiều cao hình ảnh thứ tư */
-}
-/* Thêm hiệu ứng parallax cho slider-item */
 .slider-item {
-    position: relative;
-    perspective: 1000px;
+    flex: 1;
+    max-width: calc(30% - 20px); /* Chia đều chiều rộng cho 4 ảnh */
+    box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 20px; /* Bo tròn góc để tạo cảm giác mềm mại */
+    overflow: hidden; /* Đảm bảo không có phần ảnh thừa ra */
 }
 
 .slider-item img {
-    transform: translateZ(-50px); /* Tạo chiều sâu */
-    transition: transform 0.3s ease;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease; /* Hiệu ứng chuyển động mượt mà */
+}
+
+/* Hiệu ứng hover cho slider-item */
+.slider-item:hover {
+    transform: translateY(-5px); /* Nhấc slider item lên khi hover */
 }
 
 .slider-item:hover img {
-    transform: translateZ(0px); /* Quay lại vị trí ban đầu khi hover */
+    transform: scale(1.05); /* Phóng to ảnh nhẹ khi hover */
+}
+
+
+/* Thiết lập hiển thị trên thiết bị di động */
+@media screen and (max-width: 768px) {
+    .hero-slider {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .subtitle {
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    .description {
+        font-size: 14px;
+    }
+
+    .slider-container {
+        max-width: 100%;
+        margin: 20px 0; /* Khoảng cách giữa mô tả và nút */
+        overflow-x: auto; /* Cho phép cuộn ngang nếu cần */
+    }
+
+    .slider-items {
+        display: flex;
+        gap: 10px;
+        justify-content: space-between;
+    }
+
+    .slider-item {
+        flex: 0 0 auto; /* Đảm bảo mỗi ảnh giữ nguyên kích thước */
+        width: 25%; /* Mỗi ảnh chiếm 25% chiều rộng hàng ngang */
+    }
+
+    .slider-item img {
+        width: 100%; /* Đảm bảo ảnh chiếm toàn bộ container */
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .btn-shop-now,
+    .btn-view-products {
+        padding: 10px 20px;
+        font-size: 14px;
+        width: 80%;
+    }
+}
+
+
+
+/*bố cục thứ 2****************************************************************************************************************************************************************/
+
+.furniture-collection {
+    position: relative;
+    height: auto; /* Đặt chiều cao tự động để phù hợp với nội dung */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 150px 100px; /* Thêm padding để tạo khoảng cách tốt hơn */
+    background-color: #f9f9f9; /* Đặt màu nền nhẹ nhàng để làm nổi bật nội dung */
+}
+
+.image-background {
+    position: absolute;
+    width: 100%;
+    height: 100%; /* Chiều cao phủ toàn bộ phần tử cha */
+    overflow: hidden;
+    z-index: 0; /* Đặt dưới nội dung để không đè lên chữ */
+}
+
+.image-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.overlay-content {
+    position: relative; /* Đảm bảo overlay nằm trên hình ảnh */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    z-index: 2; /* Chữ luôn nằm trên hình ảnh */
+}
+
+.furniture-collection .container {
+    width: 50%; /* Điều chỉnh chiều rộng container lớn hơn cho nội dung thoáng */
+    max-width: 1000px;
+    background-color: rgba(0, 0, 0, 0.5); /* Làm tối nền để chữ nổi bật hơn */
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center; /* Căn giữa chữ để cân đối */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Thêm hiệu ứng đổ bóng để nổi bật nội dung */
+}
+
+.furniture-collection .text-content h2 {
+    font-size: 40px; /* Tăng kích thước chữ cho tiêu đề lớn hơn */
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.furniture-collection .text-content p {
+    font-size: 18px; /* Tăng cỡ chữ để dễ đọc hơn */
+    margin-bottom: 30px;
+    color: #ddd; /* Màu chữ sáng hơn một chút để dễ đọc */
+    line-height: 1.6; /* Tăng khoảng cách dòng để nội dung thông thoáng */
+}
+
+.furniture-collection .btn-explore {
+    display: inline-block;
+    padding: 12px 30px; /* Tăng kích thước nút bấm cho dễ bấm hơn */
+    background-color: #154422;
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Thêm hiệu ứng chuyển màu mượt mà */
+}
+
+.furniture-collection .btn-explore:hover {
+    background-color: #1e5931; /* Màu đậm hơn khi rê chuột */
+}
+
+/* Điều chỉnh trên màn hình nhỏ hơn */
+@media screen and (max-width: 768px) {
+    .furniture-collection {
+        padding: 20px;
+    }
+
+    .furniture-collection .container {
+        width: 90%; /* Đảm bảo nội dung vừa với màn hình di động */
+        padding: 20px;
+    }
+
+    .furniture-collection .text-content h2 {
+        font-size: 28px; /* Giảm kích thước chữ tiêu đề cho màn hình nhỏ */
+    }
+
+    .furniture-collection .text-content p {
+        font-size: 16px;
+    }
+
+    .furniture-collection .btn-explore {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
+
+
+/***************************************************************************************************************/
+.furniture-section {
+    position: relative;
+    padding: 80px 40;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+    background-color: #f9f9f9; /* Thêm nền nhẹ để nổi bật phần nội dung */
+}
+
+.image-background1 img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0.4; /* Làm mờ ảnh nền để nổi bật nội dung phía trước */
+}
+
+.furniture-container {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Đặt văn bản lên trên và sản phẩm ở dưới */
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    padding: 40px; /* Tăng padding để tạo khoảng cách thoáng */
+}
+
+.furniture-content {
+    width: 80%; /* Tăng chiều rộng để cân đối với phần sản phẩm */
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 20px; /* Đẩy phần văn bản xuống để tránh bị đụng vào phần trên */
+}
+
+.furniture-content h2 {
+    font-size: 36px; 
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #000000; 
+}
+
+.furniture-content p {
+    font-size: 16px;
+    color: #000000; 
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6; /* Tăng khoảng cách dòng cho dễ đọc */
+}
+
+.furniture-items {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Cho phép nội dung gói xuống dòng nếu không đủ chỗ */
+    width: 100%;
+    gap: 50px; /* Giảm khoảng cách để tạo sự cân đối */
+    margin-top: 20px; /* Tạo khoảng cách giữa phần văn bản và sản phẩm */
+}
+
+.item, .item1 {
+    position: relative;
+    width: 150px; /* Tăng kích thước sản phẩm */
+    text-align: center;
+    background-color: #ffffff;
+    padding: 20px; 
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Thêm hiệu ứng chuyển động */
+    cursor: pointer; /* Thay đổi con trỏ khi hover */
+}
+
+.item:hover, .item1:hover {
+    transform: translateY(-10px); /* Hiệu ứng nhấc lên khi hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Thêm bóng để nổi bật sản phẩm khi hover */
+}
+
+.item img, .item1 img {
+    width: 100%; /* Đảm bảo ảnh chiếm toàn bộ chiều rộng của container */
+    height: auto;
+    border-radius: 10px; /* Bo góc ảnh để đồng bộ với container */
+    margin-bottom: 15px;
+}
+
+.item-details {
+    padding-top: 10px;
+    margin-top: -10px; /* Giảm khoảng cách giữa ảnh và văn bản để đồng nhất */
+}
+
+.item-name {
+    font-size: 14px; /* Tăng kích thước chữ cho dễ nhìn */
+    font-weight: bold;
+    color: #333;
+}
+
+.item-price {
+    font-size: 14px;
+    color: #27ae60; /* Đổi màu chữ thành màu xanh để nổi bật giá */
+    margin-top: 5px;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+/* Điều chỉnh cho màn hình nhỏ */
+@media screen and (max-width: 768px) {
+    .furniture-container {
+        padding: 20px;
+    }
+
+    .furniture-content h2 {
+        font-size: 28px; /* Giảm kích thước chữ tiêu đề cho màn hình nhỏ */
+    }
+
+    .furniture-content p {
+        font-size: 14px; /* Giảm kích thước chữ cho màn hình nhỏ */
+    }
+
+    .item, .item1 {
+        width: 120px; /* Giảm kích thước sản phẩm để vừa màn hình di động */
+        padding: 15px;
+    }
+
+    .item-name, .item-price {
+        font-size: 12px; /* Giảm kích thước chữ để phù hợp với màn hình nhỏ */
+    }
+}
+
+
+/*********************************************************************************************************************************************************************/
+
+.discount-section {
+    background-color: #f2eee9;
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.discount-content {
+    display: flex;
+    flex-wrap: wrap; /* Cho phép phần tử tự động xuống dòng khi không đủ chỗ */
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    gap: 30px;
+    padding: 20px;
+}
+
+.product {
+    position: relative;
+    flex: 1;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Thêm hiệu ứng chuyển động cho sản phẩm */
+    cursor: pointer; /* Thay đổi con trỏ khi hover vào sản phẩm */
+}
+
+.product:hover {
+    transform: translateY(-10px); /* Nhấc sản phẩm lên khi hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Hiệu ứng đổ bóng khi hover */
+}
+
+.product img {
+    max-width: 100%; /* Điều chỉnh để chiếm toàn bộ chiều rộng */
+    height: auto;
+    border-radius: 10px; /* Bo góc ảnh để đồng nhất với phần nền */
+}
+
+.badge {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #e74c3c; /* Đổi màu badge thành màu đỏ nổi bật hơn */
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Thêm hiệu ứng đổ bóng cho badge */
+}
+
+.discount-details {
+    flex: 2;
+    text-align: left; /* Đặt văn bản căn trái để dễ đọc hơn */
+    padding: 20px; /* Thêm khoảng cách để tạo không gian thoáng */
+}
+
+.discount-details h2 {
+    font-size: 42px; /* Giảm kích thước để phù hợp hơn với bố cục tổng thể */
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.discount-details h2 span {
+    color: #154422;
+}
+
+.discount-details p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.6; /* Tăng khoảng cách dòng cho dễ đọc */
+}
+
+.email-subscribe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px; /* Tạo khoảng cách phía trên cho phần form */
+}
+
+.email-subscribe input {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    width: 300px; /* Tăng kích thước input để dễ bấm hơn */
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+.email-subscribe input:focus {
+    border-color: #154422; /* Thêm màu nổi bật khi focus */
+    outline: none;
+}
+
+.email-subscribe button {
+    padding: 12px 30px;
+    background-color: #154422;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.email-subscribe button:hover {
+    background-color: #1e5931; /* Đổi màu khi hover */
+    transform: translateY(-3px); /* Tạo hiệu ứng nút nhấc lên khi hover */
+}
+
+/* Điều chỉnh cho màn hình nhỏ hơn */
+@media screen and (max-width: 768px) {
+    .discount-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px; /* Giảm khoảng cách giữa các phần tử để phù hợp hơn với màn hình nhỏ */
+    }
+
+    .product {
+        max-width: 80%; /* Đảm bảo sản phẩm không quá lớn trên màn hình nhỏ */
+    }
+
+    .discount-details {
+        text-align: center; /* Căn giữa văn bản để đồng nhất với các phần tử khác */
+    }
+
+    .discount-details h2 {
+        font-size: 32px; /* Giảm kích thước tiêu đề cho màn hình nhỏ */
+    }
+
+    .email-subscribe {
+        flex-direction: column; /* Đặt form email theo cột để phù hợp với màn hình nhỏ */
+        gap: 15px;
+    }
+
+    .email-subscribe input {
+        width: 100%; /* Đảm bảo input chiếm hết chiều rộng màn hình */
+    }
+}
+
+
+/**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+
+.feedback-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px; /* Tăng khoảng cách để tạo không gian thoáng */
+    background-color: #fdf6f0;
+}
+
+.feedback-container {
+    display: flex;
+    flex-wrap: wrap; /* Cho phép các phần tử xuống dòng trên màn hình nhỏ */
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    margin: 0 auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Thêm đổ bóng để nổi bật container */
+    background-color: #ffffff; /* Thêm nền trắng để nổi bật nội dung */
+}
+
+.product-feedback {
+    flex: 1;
+    text-align: center; /* Đổi căn giữa cho nhất quán */
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng chuyển động cho sản phẩm */
+    cursor: pointer;
+}
+
+.product-feedback:hover {
+    transform: translateY(-10px); /* Nhấc phần sản phẩm lên khi hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Thêm đổ bóng khi hover */
+}
+
+.product-feedback .feedback-product-image {
+    width: 100%;
+    max-width: 300px; /* Đảm bảo hình ảnh vừa phải */
+    border-radius: 10px; /* Bo góc ảnh */
+}
+
+.product-name {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #333;
+}
+
+.product-price {
+    font-size: 18px;
+    color: #27ae60; /* Đổi màu thành xanh để nổi bật */
+    margin-top: 5px;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+.feedback-content {
+    flex: 2;
+    padding: 0 30px;
+    text-align: left; /* Đảm bảo văn bản căn trái */
+}
+
+.feedback-text {
+    background-color: transparent;
+    padding: 0;
+}
+
+.quote-icon {
+    font-size: 48px;
+    color: #ff6347; /* Đổi màu thành cam để nổi bật hơn */
+    margin-bottom: 15px;
+}
+
+.feedback-content h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.feedback-content p {
+    font-size: 16px;
+    line-height: 1.8; /* Tăng khoảng cách dòng cho dễ đọc */
+    color: #666;
+}
+
+.customer-info {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.customer-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Thêm đổ bóng để nổi bật avatar */
+}
+
+.customer-details .customer-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.customer-details .customer-title {
+    font-size: 14px;
+    color: #999;
+}
+
+.product-next-feedback {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+}
+
+.product-next-feedback .feedback-product-image {
+    width: 80%; /* Giữ hình ảnh lớn hơn một chút để cân đối */
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Thêm hiệu ứng chuyển động */
+    cursor: pointer;
+}
+
+.product-next-feedback:hover .feedback-product-image {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Điều chỉnh cho màn hình nhỏ hơn */
+
+@media screen and (max-width: 768px) {
+    .feedback-section {
+        display: none;
+    }
+}
+
+/**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+.blog-section {
+    padding: 80px 20px; /* Tăng padding để tạo không gian thoáng hơn */
+    background-color: #f9f9f9;
+}
+
+.blog-container {
+    display: flex;
+    flex-wrap: wrap; /* Cho phép nội dung xuống dòng nếu không đủ không gian */
+    justify-content: space-between;
+    gap: 30px; /* Tăng khoảng cách để tạo không gian giữa các thẻ blog */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.blog-card {
+    background-color: white;
+    border-radius: 15px; /* Bo góc mượt mà hơn cho các thẻ */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: calc(33.333% - 20px); /* Điều chỉnh chiều rộng để 3 thẻ vừa nhau */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Thêm hiệu ứng chuyển động cho thẻ blog */
+    cursor: pointer;
+}
+
+.blog-card:hover {
+    transform: translateY(-10px); /* Nhấc thẻ lên khi hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Tăng đổ bóng để nổi bật thẻ khi hover */
+}
+
+.blog-content {
+    padding: 20px;
+    text-align: left;
+}
+
+.blog-date {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.blog-title {
+    font-size: 24px; /* Tăng kích thước để tiêu đề nổi bật hơn */
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.blog-description {
+    font-size: 14px; /* Tăng kích thước chữ cho dễ đọc hơn */
+    color: #555; /* Đổi màu chữ để dịu mắt hơn */
+    margin-bottom: 20px;
+    line-height: 1.6; /* Tăng khoảng cách dòng để nội dung dễ đọc */
+}
+
+.read-more {
+    font-size: 14px;
+    color: #f06827;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease; /* Thêm hiệu ứng cho liên kết khi hover */
+}
+
+.read-more:hover {
+    color: #d35400; /* Đổi màu khi hover để tạo sự tương tác */
+}
+
+.blog-image img {
+    width: 100%;
+    height: 200px; /* Đặt chiều cao cố định để đồng nhất hình ảnh */
+    object-fit: cover; /* Giữ tỷ lệ và cắt phần không phù hợp */
+    transition: transform 0.3s ease; /* Thêm hiệu ứng chuyển động khi hover vào ảnh */
+}
+
+.blog-card:hover .blog-image img {
+    transform: scale(1.05); /* Phóng to nhẹ ảnh khi hover để tạo điểm nhấn */
+}
+
+/* Điều chỉnh cho màn hình nhỏ hơn */
+@media screen and (max-width: 1024px) {
+    .blog-card {
+        width: calc(50% - 20px); /* Giảm xuống 2 thẻ mỗi dòng cho màn hình vừa */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .blog-container {
+        flex-direction: column;
+        gap: 20px; /* Tăng khoảng cách giữa các thẻ trên màn hình nhỏ */
+    }
+
+    .blog-card {
+        width: 90%; /* Giảm kích thước để vừa với màn hình di động */
+        margin: 0 auto;
+    }
+
+    .blog-content {
+        padding: 15px;
+    }
+
+    .blog-title {
+        font-size: 20px;
+    }
+
+    .blog-description, .read-more {
+        font-size: 14px;
+    }
 }

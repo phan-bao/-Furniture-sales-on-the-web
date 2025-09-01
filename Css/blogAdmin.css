@@ -1,0 +1,195 @@
+
+h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    padding-left: 3px;
+    color: var(--color-dark);
+    margin-bottom: 20px;
+}
+
+
+.main-content {
+    width: 100%;
+    max-width: 1200px;
+    margin: 110px auto;
+    padding: 30px;
+    margin-top: 85px;
+    background-color: var(--color-white);
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--box-shadow);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Search and Create Button - Align on the same row */
+.search-container {
+    display: flex;
+    justify-content: flex-start; /* Align items to the left */
+    gap: 20px;
+    width: 100%; 
+    align-items: center;
+}
+
+/* Delete All Button Style */
+.delete-all-btn {
+    padding: 12px 20px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: auto; /* This pushes the button to the right */
+}
+
+/* "Delete All" button hover effect */
+.delete-all-btn:hover {
+    background-color: #b62c10;
+}
+
+/* Search Input Style */
+#searchInput {
+    padding: 12px 15px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    outline: none;
+    width: 170px;
+    transition: border-color 0.3s ease;
+}
+
+/* Adjust the order of elements */
+.search-container input {
+    order: 1; /* Keeps the input field first */
+}
+
+.search-container .delete-all-btn {
+    order: 2; /* Keeps the delete button second (to the right) */
+}
+
+/* Create New Post Button */
+.create-order-btn {
+    padding: 12px 20px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.create-order-btn:hover {
+    background-color: #0061a8;
+}
+
+#searchInput:focus {
+    border-color: var(--color-primary);
+}
+
+/* Table Layout */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 1rem;
+}
+
+/* Table Header */
+th, td {
+    padding: 14px 20px;
+    text-align: left;
+    color: var(--color-dark);
+    border-bottom: 1px solid #e2e8f0;
+}
+
+th {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-weight: 600;
+}
+
+td {
+    background-color: var(--color-light-grey);
+}
+
+td:first-child {
+    padding-left: 30px;
+}
+
+td img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;  /* Slightly rounded corners */
+}
+
+/* Row Styles */
+tr:hover {
+    background-color: #e2e8f0;
+    cursor: pointer;
+}
+
+tr.selected {
+    background-color: #e0f7fa;
+}
+
+tr.selected:hover {
+    background-color: #e0f7fa; /* Keep selection highlighted */
+}
+
+/* Checkbox */
+input[type="checkbox"] {
+    transform: scale(1.3);
+    cursor: pointer;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.edit-btn, .delete-btn {
+    background-color: transparent;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.edit-btn:hover {
+    transform: scale(1.1);
+    color: var(--color-success);
+}
+
+.delete-btn:hover {
+    transform: scale(1.1);
+    color: var(--color-danger);
+}
+
+.material-icons-sharp {
+    font-size: 20px;
+}
+
+.edit-btn {
+    color: var(--color-success);
+}
+
+.delete-btn {
+    color: var(--color-danger);
+}
+
+/* Select All Checkbox */
+#selectAll {
+    transform: scale(1.5);
+    cursor: pointer;
+}
+
+/* Active Row Selection */
+.selected {
+    background-color: #e3f2fd;
+}

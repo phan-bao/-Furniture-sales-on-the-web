@@ -1,0 +1,251 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* CSS Variables */
+:root {
+    --primary-color: rgb(15, 76, 83); /* Màu chính */
+    --gradient-btn: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); /* Gradient nút */
+    --background-color: #f0f2f5; /* Màu nền */
+    --shadow-color: rgba(0, 0, 0, 0.1); /* Bóng mờ */
+    --font-color: #333333; /* Màu chữ */
+    --input-border: #232020; /* Viền input */
+}
+
+/* Tổng quan */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: url('../Images/1.11.jpg') no-repeat center center fixed; /* Đường dẫn tới ảnh nền */
+    background-size: cover; /* Để ảnh phủ toàn bộ màn hình */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Login Container */
+
+.login-container {
+    background: rgba(255, 255, 255, 0.65); /* Nền trắng trong hơn, alpha giảm xuống 0.65 */
+    backdrop-filter: blur(1px); /* Tăng độ mờ nền phía sau */
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    max-width: 90%;
+    text-align: center;
+}
+
+
+/* Tiêu đề */
+h2 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    font-weight: 610;
+    margin-bottom: 30px;
+}
+
+/* Thông báo lỗi */
+.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+/* Các trường nhập liệu */
+.input-field {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--input-border);
+    padding: 5px 0;
+}
+
+.input-field i {
+    font-size: 1.2rem;
+    margin-right: 10px;
+    color: var(--input-border);
+}
+
+.input-field input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    color: var(--font-color);
+    padding: 5px;
+    background: transparent;
+}
+
+.input-field input::placeholder {
+    color: #aaa;
+    font-size: 0.95rem;
+}
+
+/* Nút Đăng Nhập */
+button.btn {
+    background: var(--gradient-btn);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 30px;
+    padding: 15px;
+    width: 60%;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 20px;
+}
+
+button.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px var(--shadow-color);
+}
+
+/* Căn chỉnh biểu tượng con mắt */
+.input-field {
+    position: relative;
+}
+
+.input-field .toggle-password {
+    position: absolute;
+    right: 10px;
+    font-size: 1.2rem;
+    color: #555;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: color 0.3s ease;
+}
+
+.input-field .toggle-password:hover {
+    color: var(--primary-color); /* Màu chính nếu hover */
+}/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* CSS Variables */
+:root {
+    --primary-color: rgb(15, 76, 83); /* Màu chính */
+    --gradient-btn: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); /* Gradient nút */
+    --background-color: #f0f2f5; /* Màu nền */
+    --shadow-color: rgba(0, 0, 0, 0.1); /* Bóng mờ */
+    --font-color: #333333; /* Màu chữ */
+    --input-border: #232020; /* Viền input */
+}
+
+/* Tổng quan */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: url('../Images/1.11.jpg') no-repeat center center fixed; /* Đường dẫn tới ảnh nền */
+    background-size: cover; /* Để ảnh phủ toàn bộ màn hình */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Login Container */
+
+.login-container {
+    background: rgba(255, 255, 255, 0.65); /* Nền trắng trong hơn, alpha giảm xuống 0.65 */
+    backdrop-filter: blur(1px); /* Tăng độ mờ nền phía sau */
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    max-width: 90%;
+    text-align: center;
+}
+
+
+/* Tiêu đề */
+h2 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    font-weight: 610;
+    margin-bottom: 30px;
+}
+
+/* Thông báo lỗi */
+.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+/* Các trường nhập liệu */
+.input-field {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--input-border);
+    padding: 5px 0;
+}
+
+.input-field i {
+    font-size: 1.2rem;
+    margin-right: 10px;
+    color: var(--input-border);
+}
+
+.input-field input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    color: var(--font-color);
+    padding: 5px;
+    background: transparent;
+}
+
+.input-field input::placeholder {
+    color: #aaa;
+    font-size: 0.95rem;
+}
+
+/* Nút Đăng Nhập */
+button.btn {
+    background: var(--gradient-btn);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 30px;
+    padding: 15px;
+    width: 60%;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 20px;
+}
+
+button.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px var(--shadow-color);
+}
+
+/* Căn chỉnh biểu tượng con mắt */
+.input-field {
+    position: relative;
+}
+
+.input-field .toggle-password {
+    position: absolute;
+    right: 10px;
+    font-size: 1.2rem;
+    color: #555;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: color 0.3s ease;
+}
+
+.input-field .toggle-password:hover {
+    color: var(--primary-color); /* Màu chính nếu hover */
+}

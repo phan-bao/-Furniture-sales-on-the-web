@@ -1,0 +1,108 @@
+
+
+/* Form tạo mã khuyến mãi */
+.create-promotion-form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Group các phần tử form */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Label cho input fields */
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+/* Input fields */
+input[type="text"],
+input[type="number"],
+input[type="datetime-local"],
+select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Input focus */
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="datetime-local"]:focus,
+select:focus {
+    border-color: #0066cc;
+    outline: none;
+}
+
+/* Button tạo mã khuyến mãi */
+.create-promotion-btn {
+    background-color: #28a745;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.create-promotion-btn:hover {
+    background-color: #218838;
+}
+
+/* Hiển thị thông báo sau khi tạo mã thành công */
+p {
+    text-align: center;
+    font-size: 18px;
+    color: #28a745;
+    font-weight: bold;
+}
+
+/* Thông báo lỗi */
+.error-message {
+    text-align: center;
+    font-size: 18px;
+    color: #dc3545;
+    font-weight: bold;
+}
+
+/* Media Queries cho thiết bị di động */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .create-promotion-form {
+        padding: 20px;
+    }
+
+    .form-group label {
+        font-size: 14px;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="datetime-local"],
+    select {
+        font-size: 14px;
+    }
+
+    .create-promotion-btn {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+}

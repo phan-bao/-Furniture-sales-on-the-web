@@ -1,0 +1,122 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.order-check {
+    flex: 1;
+    max-width: 350px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.order-check h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.order-check input[type="text"], 
+.order-check input[type="email"] {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.order-check input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #2a7f2e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.result-display {
+    flex: 2;
+    max-width: 600px;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1em;
+    color: #333;
+    gap: 20px; /* Thêm khoảng cách giữa result-left và result-right */
+}
+
+.result-left, .result-right {
+    width: 45%;
+}
+
+.result-left h3, .result-right h3 {
+    font-size: 1.6em;
+    margin-bottom: 15px; /* Tăng khoảng cách dưới tiêu đề */
+    font-weight: bold;
+}
+
+.result-left p, .result-right p {
+    margin: 10px 0; /* Tăng khoảng cách giữa các dòng */
+    line-height: 1.6; /* Tăng line-height để giãn cách các dòng trong đoạn văn */
+}
+
+.result-display .gia-tien {
+    font-size: 1.5em; /* Giảm kích thước giá trị đơn hàng */
+    color: #d9534f;
+    font-weight: bold;
+    margin-top: 15px; /* Thêm khoảng cách trên giá trị đơn hàng */
+}
+
+.result-display .status {
+    font-size: 0.7em; /* Giảm kích thước trạng thái thanh toán và giao hàng */
+    color: #d9534f;
+    font-weight: bold;
+    margin-top: 15px; /* Thêm khoảng cách trên trạng thái */
+}
+
+.result-display p span {
+    color: #d9534f;
+    font-weight: bold;
+}
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    .result-display {
+        flex-direction: column; /* Chuyển sang dạng cột cho mobile */
+        text-align: center;
+    }
+
+    .result-left, .result-right {
+        width: 100%;
+    }
+
+    .order-check input[type="text"],
+    .order-check input[type="email"],
+    .order-check input[type="submit"] {
+        width: 100%; /* Đảm bảo full-width trên mobile */
+    }
+
+    .result-display .gia-tien {
+        font-size: 1.3em; /* Giảm kích thước trên mobile */
+    }
+
+    .result-left h3, .result-right h3 {
+        font-size: 1.4em; /* Giảm kích thước tiêu đề trên mobile */
+    }
+}

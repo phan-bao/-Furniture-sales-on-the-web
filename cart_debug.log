@@ -1,0 +1,203 @@
+======= New Request =======
+Session Data: Array
+(
+    [ma_khach_hang] => 7
+    [username] => 1
+    [ten_khach_hang] => 1
+)
+
+User ID: 7
+Received Data: Array
+(
+    [sku] => BED_003
+    [quantity] => 1
+    [color] => Vàng
+    [material] => Gỗ thông
+    [size] => 200x180x50 cm
+)
+
+Invalid Data Received.
+======= New Request =======
+Session Data: Array
+(
+    [ma_khach_hang] => 7
+    [username] => 1
+    [ten_khach_hang] => 1
+)
+
+User ID: 7
+Received Data: Array
+(
+    [sku_phien_ban] => BED_003_BLU
+    [quantity] => 1
+)
+
+======= New Request =======
+Session Data: Array
+(
+    [ma_khach_hang] => 7
+    [username] => 1
+    [ten_khach_hang] => 1
+)
+
+User ID: 7
+Received Data: Array
+(
+    [sku_phien_ban] => BED_003_BLU
+    [quantity] => 1
+)
+
+======= New Request =======
+Session Data: Array
+(
+    [ma_khach_hang] => 7
+    [username] => 1
+    [ten_khach_hang] => 1
+)
+
+User ID: 7
+Received Data: Array
+(
+    [sku_phien_ban] => WAR_141_WHI
+    [quantity] => 1
+)
+
+======= New Request =======
+Session Data: Array
+(
+    [ma_khach_hang] => 7
+    [username] => 1
+    [ten_khach_hang] => 1
+)
+
+User ID: 7
+Received Data: Array
+(
+    [sku_phien_ban] => WAR_141_BLU
+    [quantity] => 1
+)
+
+======= New Request =======
+Session Data: Array
+(
+    [ma_khach_hang] => 7
+    [username] => 1
+    [ten_khach_hang] => 1
+)
+
+User ID: 7
+Received Data: Array
+(
+    [sku_phien_ban] => WAR_141_WHI
+    [quantity] => 1
+)
+
+Processing SKU_phien_ban: WAR_141_WHI, Quantity: 1
+======= New Request =======
+Session Data: Array
+(
+    [ma_khach_hang] => 7
+    [username] => 1
+    [ten_khach_hang] => 1
+)
+
+User ID: 7
+Received Data: Array
+(
+    [sku_phien_ban] => DEK_001_WHI
+    [quantity] => 1
+)
+
+Processing SKU_phien_ban: DEK_001_WHI, Quantity: 1
+======= New Request =======
+Session Data: Array
+(
+    [ma_khach_hang] => 7
+    [username] => 1
+    [ten_khach_hang] => 1
+)
+
+User ID: 7
+Received Data: Array
+(
+    [sku_phien_ban] => DEK_001_WHI
+    [quantity] => 1
+)
+
+Processing SKU_phien_ban: DEK_001_WHI, Quantity: 1
+Database connection successful.
+Prepared SELECT statement successfully.
+Executed SELECT statement successfully.
+SKU_phien_ban tồn tại.
+Prepared SELECT giohang statement successfully.
+Executed SELECT giohang statement successfully.
+Prepared INSERT giohang statement successfully.
+======= New Request =======
+Session Data: Array
+(
+    [ma_khach_hang] => 7
+    [username] => 1
+    [ten_khach_hang] => 1
+)
+
+User ID: 7
+Received Data: Array
+(
+    [sku_phien_ban] => DEK_001_WHI
+    [quantity] => 1
+)
+
+Processing SKU_phien_ban: DEK_001_WHI, Quantity: 1
+Database connection successful.
+Prepared SELECT statement successfully.
+Executed SELECT statement successfully.
+SKU_phien_ban tồn tại.
+Prepared SELECT giohang statement successfully.
+Executed SELECT giohang statement successfully.
+Prepared INSERT giohang statement successfully.
+======= New Request =======
+Session Data: Array
+(
+    [ma_khach_hang] => 7
+    [username] => 1
+    [ten_khach_hang] => 1
+)
+
+User ID: 7
+Received Data: Array
+(
+    [sku_phien_ban] => DEK_001_WHI
+    [quantity] => 1
+)
+
+Processing SKU_phien_ban: DEK_001_WHI, Quantity: 1
+Database connection successful.
+Prepared SELECT statement successfully.
+Executed SELECT statement successfully.
+SKU_phien_ban tồn tại.
+Prepared SELECT giohang statement successfully.
+Executed SELECT giohang statement successfully.
+Prepared INSERT giohang statement successfully.
+======= New Request =======
+Session Data: Array
+(
+    [ma_khach_hang] => 7
+    [username] => 1
+    [ten_khach_hang] => 1
+)
+
+User ID: 7
+Received Data: Array
+(
+    [sku_phien_ban] => BED_003_BLU
+    [quantity] => 1
+)
+
+Processing SKU_phien_ban: BED_003_BLU, Quantity: 1
+Database connection successful.
+Prepared SELECT statement successfully.
+Executed SELECT statement successfully.
+SKU_phien_ban tồn tại.
+Prepared SELECT giohang statement successfully.
+Executed SELECT giohang statement successfully.
+Prepared INSERT giohang statement successfully.

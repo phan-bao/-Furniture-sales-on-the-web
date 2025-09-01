@@ -1,0 +1,568 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --color-primary: #6C9BCF;
+    --color-danger: #FF0060;
+    --color-success: #1B9C85;
+    --color-warning: #F7D060;
+    --color-white: #fff;
+    --color-info-dark: #7d8da1;
+    --color-dark: #363949;
+    --color-light: rgba(132, 139, 200, 0.18);
+    --color-dark-variant: #677483;
+    --color-background: #f6f6f9;
+
+    --card-border-radius: 2rem;
+    --border-radius-1: 0.4rem;
+    --border-radius-2: 1.2rem;
+
+    --card-padding: 1.8rem;
+    --padding-1: 1.2rem;
+
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    appearance: 0;
+    border: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 14px;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.88rem;
+    user-select: none;
+    overflow-x: hidden;
+    color: var(--color-dark);
+    background-color: var(--color-background);
+}
+
+a {
+    color: var(--color-dark);
+}
+
+img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+h1 {
+    font-weight: 800;
+    font-size: 1.8rem;
+    padding-top: 15px;
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+h3 {
+    font-weight: 500;
+    font-size: 0.87rem;
+}
+
+small {
+    font-size: 0.76rem;
+}
+
+p {
+    color: var(--color-dark-variant);
+}
+
+b {
+    color: var(--color-dark);
+}
+
+.text-muted {
+    color: var(--color-info-dark);
+}
+
+.primary {
+    color: var(--color-primary);
+}
+
+.danger {
+    color: var(--color-danger);
+}
+
+.success {
+    color: var(--color-success);
+}
+
+.warning {
+    color: var(--color-warning);
+}
+
+.container {
+    display: grid;
+    width: 96%;
+    margin: 0 auto;
+    gap: 1.8rem;
+    grid-template-columns: 12rem auto 23rem;
+}
+
+aside {
+    height: 100vh;
+}
+
+aside .toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.4rem;
+}
+
+aside .toggle .logo {
+    display: flex;
+    gap: 0.5rem;
+}
+
+aside .toggle .logo img {
+    width: 2rem;
+    height: 2rem;
+}
+
+aside .toggle .close {
+    padding-right: 1rem;
+    display: none;
+}
+
+aside .sidebar {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-white);
+    box-shadow: var(--box-shadow);
+    border-radius: 15px;
+    height: 88vh;
+    position: relative;
+    top: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+aside .sidebar:hover {
+    box-shadow: none;
+}
+
+aside .sidebar a {
+    display: flex;
+    align-items: center;
+    color: var(--color-info-dark);
+    height: 3.7rem;
+    gap: 1rem;
+    position: relative;
+    margin-left: 2rem;
+    transition: all 0.3s ease;
+}
+
+aside .sidebar a span {
+    font-size: 1.6rem;
+    transition: all 0.3s ease;
+}
+
+aside .sidebar a:last-child {
+    position: absolute;
+    bottom: 2rem;
+    width: 100%;
+}
+
+aside .sidebar a.active {
+    width: 100%;
+    color: var(--color-primary);
+    background-color: var(--color-light);
+    margin-left: 0;
+}
+
+aside .sidebar a.active::before {
+    content: '';
+    width: 6px;
+    height: 18px;
+    background-color: var(--color-primary);
+}
+
+aside .sidebar a.active span {
+    color: var(--color-primary);
+    margin-left: calc(1rem - 3px);
+}
+
+aside .sidebar a:hover {
+    color: var(--color-primary);
+}
+
+aside .sidebar a:hover span {
+    margin-left: 0.6rem;
+}
+
+aside .sidebar .message-count {
+    background-color: var(--color-danger);
+    padding: 2px 6px;
+    color: var(--color-white);
+    font-size: 11px;
+    border-radius: var(--border-radius-1);
+}
+
+/* Thanh tìm kiếm và danh sách sản phẩm */
+.search-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#search-bar {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+#search-bar:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+.product-list {
+    display: none;
+    position: absolute;
+    width: 100%;
+    max-height: 250px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    background-color: white;
+    z-index: 1;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    margin-top: 5px;
+}
+
+.product-item {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.product-item:hover {
+    background-color: #f1f1f1;
+}
+
+/* Chi tiết sản phẩm đã chọn */
+#order-details {
+    margin-top: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    background-color: #fafafa;
+}
+
+.product-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.product-name {
+    flex: 2;
+    font-weight: 500;
+}
+
+.product-price {
+    flex: 1;
+    font-weight: 600;
+    text-align: right;
+    color: #4CAF50;
+}
+
+.quantity {
+    width: 60px;
+    padding: 8px;
+    text-align: center;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+}
+
+.remove-product {
+    background-color: #FF5C5C;
+    color: white;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    transform: translateX(10px); /* Di chuyển sang phải 5px */
+    
+}
+
+.remove-product:hover {
+    background-color: darkred;
+}
+
+/* Tóm tắt đơn hàng */
+.order-summary {
+    margin-top: 20px;
+}
+
+.order-summary textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    resize: none;
+}
+
+.order-total {
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+/* Nút thanh toán */
+.payment-buttons {
+    display: flex;
+    justify-content: flex-end; /* Căn bên phải */
+    gap: 10px; /* Khoảng cách giữa các nút */
+}
+
+.payment-buttons .btn {
+    padding: 12px 20px; /* Padding cho nút */
+    border: none; /* Bỏ viền */
+    border-radius: 6px; /* Bo tròn góc */
+    cursor: pointer; /* Con trỏ chuột dạng tay */
+    font-weight: 600; /* Đậm chữ */
+    transition: background-color 0.3s ease; /* Hiệu ứng chuyển màu */
+}
+
+.payment-buttons .btn.primary {
+    background-color: #4CAF50; /* Màu nền chính */
+    color: white; /* Màu chữ trắng */
+}
+
+.payment-buttons .btn.primary:hover {
+    background-color: #3a8d3e; /* Màu nền khi hover */
+}
+
+.payment-buttons .btn.secondary {
+    background-color: #f1f1f1; /* Màu nền phụ */
+    color: #333; /* Màu chữ */
+}
+
+.payment-buttons .btn.secondary:hover {
+    background-color: #ddd; /* Màu nền khi hover */
+}
+
+.text-link {
+    color: #4CAF50; /* Màu chữ cho link */
+    cursor: pointer; /* Con trỏ chuột dạng tay */
+    font-weight: 500; /* Độ dày chữ */
+    position: relative; /* Để sử dụng cho pseudo-element */
+    text-decoration: none; /* Bỏ gạch chân mặc định */
+    transition: color 0.3s ease, transform 0.3s ease; /* Hiệu ứng chuyển đổi màu sắc và di chuyển */
+    top: -35px; /* Di chuyển lên trên 10px */
+}
+
+.text-link::after {
+    content: ''; /* Tạo một pseudo-element */
+    position: absolute; /* Đặt vị trí tuyệt đối */
+    left: 0; /* Đặt vào bên trái */
+    bottom: 0; /* Đặt vào dưới cùng */
+    height: 2px; /* Độ dày của viền */
+    width: 100%; /* Chiều rộng bằng chiều rộng của link */
+    background-color: #4CAF50; /* Màu viền */
+    transform: scaleX(0); /* Bắt đầu với viền không hiển thị */
+    transition: transform 0.3s ease; /* Hiệu ứng chuyển đổi cho viền */
+}
+
+.text-link:hover {
+    color: #3e8e41; /* Màu khi hover */
+    transform: translateY(-3px); /* Di chuyển lên trên 3px khi hover */
+}
+
+.text-link:hover::after {
+    transform: scaleX(1); /* Hiển thị viền khi hover */
+}
+/* Container của popup */
+.discount-popup {
+    display: none; /* Ẩn popup ban đầu */
+    position: absolute; /* Vị trí tuyệt đối */
+    background-color: #fff; /* Màu nền trắng */
+    padding: 20px; /* Padding cho popup */
+    border-radius: 8px; /* Bo tròn góc */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Đổ bóng */
+    max-width: 300px; /* Chiều rộng tối đa */
+    z-index: 10; /* Đảm bảo popup nằm trên cùng */
+}
+
+/* Tiêu đề của popup */
+.discount-popup h3 {
+    margin-bottom: 15px; /* Khoảng cách dưới tiêu đề */
+    font-size: 20px; /* Kích thước chữ tiêu đề */
+    font-weight: 600; /* Đậm chữ */
+}
+
+/* Các input để nhập khuyến mãi */
+.discount-inputs {
+    display: flex; /* Hiển thị dạng flex */
+    gap: 10px; /* Khoảng cách giữa các input */
+    margin-bottom: 15px; /* Khoảng cách dưới cùng */
+}
+
+.discount-inputs input {
+    width: 50%; /* Chiều rộng của input */
+    padding: 10px; /* Padding cho input */
+    border-radius: 4px; /* Bo tròn góc */
+    border: 1px solid #ddd; /* Viền cho input */
+}
+
+/* Các lý do và mã khuyến mãi */
+.discount-reason, .discount-code {
+    margin-bottom: 15px; /* Khoảng cách dưới cùng */
+}
+
+.discount-reason input, .discount-code input {
+    width: 100%; /* Chiều rộng đầy đủ */
+    padding: 10px; /* Padding cho input */
+    border-radius: 4px; /* Bo tròn góc */
+    border: 1px solid #ddd; /* Viền cho input */
+}
+
+/* Các nút áp dụng và đóng */
+.discount-actions {
+    display: flex; /* Hiển thị dạng flex */
+    justify-content: space-between; /* Căn giữa các nút */
+    gap: 10px; /* Khoảng cách giữa các nút */
+}
+
+/* Nút chung */
+.btn {
+    padding: 10px 15px; /* Padding cho nút */
+    border-radius: 6px; /* Bo tròn góc */
+    cursor: pointer; /* Con trỏ chuột dạng tay */
+    border: none; /* Bỏ viền */
+    font-weight: 600; /* Đậm chữ */
+}
+
+/* Nút chính */
+.btn.primary {
+    background-color: #4CAF50; /* Màu nền chính */
+    color: #fff; /* Màu chữ trắng */
+}
+
+/* Nút phụ */
+.btn.secondary {
+    background-color: #ddd; /* Màu nền phụ */
+    color: #333; /* Màu chữ */
+}
+
+/* Hiệu ứng hover cho nút chính */
+.btn.primary:hover {
+    background-color: #3a8d3e; /* Màu nền khi hover */
+}
+
+/* Hiệu ứng hover cho nút phụ */
+.btn.secondary:hover {
+    background-color: #ccc; /* Màu nền khi hover */
+}
+
+/* Responsive styling */
+@media (max-width: 600px) {
+    .discount-popup {
+        max-width: 90%; /* Đảm bảo chiều rộng cho màn hình nhỏ */
+    }
+}
+
+
+/* General modal styles */
+.modal {
+    display: none; /* Ẩn modal ban đầu */
+    position: fixed; /* Đặt modal ở vị trí cố định */
+    z-index: 1000; /* Đảm bảo modal nằm trên cùng */
+    left: 0;
+    top: 0;
+    width: 100%; /* Chiếm toàn bộ chiều rộng */
+    height: 100%; /* Chiếm toàn bộ chiều cao */
+    background-color: rgba(0, 0, 0, 0.5); /* Nền mờ cho modal */
+}
+
+/* Modal content styling */
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 400px; /* Đặt chiều rộng cho modal */
+    max-width: 90%; /* Đảm bảo modal không quá lớn */
+    margin: auto; /* Giữa trang */
+    position: relative;
+    top: 50%; /* Căn giữa theo chiều dọc */
+    transform: translateY(-50%); /* Căn giữa chính xác */
+}
+
+/* Close button styling */
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Heading styling */
+.modal-content h2 {
+    font-size: 20px; /* Tăng kích thước chữ */
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* Form styling */
+.modal-content form div {
+    margin-bottom: 15px;
+}
+
+.modal-content form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+/* Button styling */
+.modal-content button {
+    padding: 10px 15px;
+    border-radius: 6px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.modal-content button:hover {
+    background-color: #3a8d3e;
+}
+
+/* Responsive styling */
+@media (max-width: 600px) {
+    .modal-content {
+        width: 90%; /* Đảm bảo chiều rộng cho màn hình nhỏ */
+    }
+}
+.order-form{
+    padding-top: 50px;
+}

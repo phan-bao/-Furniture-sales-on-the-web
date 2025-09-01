@@ -1,0 +1,546 @@
+Received Data: Array
+(
+    [sku] => BED_003
+    [quantity] => 1
+    [color] => Vàng
+    [material] => Gỗ thông
+    [size] => 200x180x50 cm
+)
+
+Added to cart: Array
+(
+    [sku] => BED_003
+    [quantity] => 1
+    [color] => Vàng
+    [material] => Gỗ thông
+    [size] => 200x180x50 cm
+)
+
+Received Data: 
+Invalid Data Received.
+Received Data: 
+Invalid Data Received.
+Received Data: Array
+(
+    [sku] => BED_003
+    [quantity] => 1
+    [color] => Vàng
+    [material] => Gỗ thông
+    [size] => 200x180x50 cm
+)
+
+Added to cart: Array
+(
+    [sku] => BED_003
+    [quantity] => 1
+    [color] => Vàng
+    [material] => Gỗ thông
+    [size] => 200x180x50 cm
+)
+
+Received Data: 
+Invalid Data Received.
+Received Data: 
+Received Data: 
+Received Data: {"sku":"BED_003","quantity":"1","color":"Vàng","material":"Gỗ thông","size":"200x180x50 cm"}
+Received Data: 
+Received Data: 
+Received Data: 
+======= New Request =======
+Session Data: Array
+(
+    [ma_khach_hang] => 7
+    [username] => 1
+    [ten_khach_hang] => 1
+)
+
+User not logged in.
+======= New Request =======
+Session Data: Array
+(
+    [ma_khach_hang] => 7
+    [username] => 1
+    [ten_khach_hang] => 1
+)
+
+User not logged in.
+======= New Request =======
+Session Data: Array
+(
+    [ma_khach_hang] => 7
+    [username] => 1
+    [ten_khach_hang] => 1
+)
+
+User not logged in.
+======= New Request =======
+Session Data: Array
+(
+    [ma_khach_hang] => 7
+    [username] => 1
+    [ten_khach_hang] => 1
+)
+
+User not logged in.
+======= New Request =======
+Session Data: Array
+(
+    [ma_khach_hang] => 7
+    [username] => 1
+    [ten_khach_hang] => 1
+)
+
+User not logged in.
+======= New Request =======
+Session Data: Array
+(
+    [ma_khach_hang] => 7
+    [username] => 1
+    [ten_khach_hang] => 1
+)
+
+User ID: 7
+Received Data: Array
+(
+    [sku] => BED_003
+    [quantity] => 1
+    [color] => Vàng
+    [material] => Gỗ thông
+    [size] => 200x180x50 cm
+)
+
+SKU không tồn tại: BED_003
+======= New Request =======
+Session Data: Array
+(
+    [ma_khach_hang] => 7
+    [username] => 1
+    [ten_khach_hang] => 1
+)
+
+User ID: 7
+Received Data: 
+Invalid Data Received.
+======= New Request =======
+Session Data: Array
+(
+    [ma_khach_hang] => 7
+    [username] => 1
+    [ten_khach_hang] => 1
+)
+
+User ID: 7
+Received Data: 
+Invalid Data Received.
+======= New Request =======
+Session Data: Array
+(
+    [ma_khach_hang] => 7
+    [username] => 1
+    [ten_khach_hang] => 1
+)
+
+User ID: 7
+Received Data: 
+Invalid Data Received.
+======= New Request =======
+Session Data: Array
+(
+    [ma_khach_hang] => 7
+    [username] => 1
+    [ten_khach_hang] => 1
+)
+
+User ID: 7
+Received Data: 
+Invalid Data Received.
+======= New Request =======
+Session Data: Array
+(
+    [ma_khach_hang] => 7
+    [username] => 1
+    [ten_khach_hang] => 1
+)
+
+User ID: 7
+Received Data: 
+Invalid Data Received.
+======= New Request =======
+Session Data: Array
+(
+    [ma_khach_hang] => 7
+    [username] => 1
+    [ten_khach_hang] => 1
+)
+
+User ID: 7
+Received Data: 
+Invalid Data Received.
+======= New Request =======
+Session Data: Array
+(
+    [ma_khach_hang] => 7
+    [username] => 1
+    [ten_khach_hang] => 1
+)
+
+User ID: 7
+Received Data: 
+Invalid Data Received.
+======= New Request =======
+Session Data: Array
+(
+    [ma_khach_hang] => 7
+    [username] => 1
+    [ten_khach_hang] => 1
+)
+
+User ID: 7
+Received Data: 
+Invalid Data Received.
+======= New Request =======
+Session Data: Array
+(
+    [ma_khach_hang] => 7
+    [username] => 1
+    [ten_khach_hang] => 1
+)
+
+User ID: 7
+Received Data: Array
+(
+    [sku] => BED_003
+    [quantity] => 1
+    [color] => Vàng
+    [material] => Gỗ thông
+    [size] => 200x180x50 cm
+)
+
+SKU không tồn tại: BED_003
+======= New Request =======
+Session Data: Array
+(
+    [ma_khach_hang] => 7
+    [username] => 1
+    [ten_khach_hang] => 1
+)
+
+User ID: 7
+Received Data: Array
+(
+    [sku] => BED_003
+    [quantity] => 1
+    [color] => Vàng
+    [material] => Gỗ thông
+    [size] => 200x180x50 cm
+)
+
+SKU không tồn tại: BED_003
+======= New Request =======
+Session Data: Array
+(
+    [ma_khach_hang] => 7
+    [username] => 1
+    [ten_khach_hang] => 1
+)
+
+User ID: 7
+Received Data: Array
+(
+    [sku] => BED_003
+    [quantity] => 1
+    [color] => Xanh
+    [material] => Gỗ thông
+    [size] => 200x180x50 cm
+)
+
+SKU không tồn tại: BED_003
+======= New Request =======
+Session Data: Array
+(
+    [ma_khach_hang] => 7
+    [username] => 1
+    [ten_khach_hang] => 1
+)
+
+User ID: 7
+Received Data: Array
+(
+    [sku] => BED_003
+    [quantity] => 1
+    [color] => Vàng
+    [material] => Gỗ thông
+    [size] => 200x180x50 cm
+)
+
+SKU không tồn tại: BED_003
+======= New Request =======
+Session Data: Array
+(
+    [ma_khach_hang] => 7
+    [username] => 1
+    [ten_khach_hang] => 1
+)
+
+User ID: 7
+Received Data: Array
+(
+    [sku] => BED_003
+    [quantity] => 1
+    [color] => Vàng
+    [material] => Gỗ thông
+    [size] => 200x180x50 cm
+)
+
+SKU không tồn tại: BED_003
+======= New Request =======
+Session Data: Array
+(
+    [ma_khach_hang] => 7
+    [username] => 1
+    [ten_khach_hang] => 1
+)
+
+User ID: 7
+Received Data: Array
+(
+    [sku] => TAB_002
+    [quantity] => 1
+    [color] => Nâu
+    [material] => Gỗ tự nhiên
+    [size] => 60x60x45 cm
+)
+
+SKU không tồn tại: TAB_002
+======= New Request =======
+Session Data: Array
+(
+    [ma_khach_hang] => 7
+    [username] => 1
+    [ten_khach_hang] => 1
+)
+
+User ID: 7
+Received Data: Array
+(
+    [sku] => BED_003
+    [quantity] => 1
+    [color] => Vàng
+    [material] => Gỗ thông
+    [size] => 200x180x50 cm
+)
+
+Invalid Data Received.
+======= New Request =======
+Session Data: Array
+(
+    [ma_khach_hang] => 7
+    [username] => 1
+    [ten_khach_hang] => 1
+)
+
+User ID: 7
+Received Data: Array
+(
+    [sku] => BED_003
+    [quantity] => 1
+    [color] => Vàng
+    [material] => Gỗ thông
+    [size] => 200x180x50 cm
+)
+
+Invalid Data Received.
+======= New Request =======
+Session Data: Array
+(
+    [ma_khach_hang] => 7
+    [username] => 1
+    [ten_khach_hang] => 1
+)
+
+User ID: 7
+Received Data: Array
+(
+    [sku] => BED_003
+    [quantity] => 1
+    [color] => Vàng
+    [material] => Gỗ thông
+    [size] => 200x180x50 cm
+)
+
+Invalid Data Received.
+======= New Request =======
+Session Data: Array
+(
+    [ma_khach_hang] => 7
+    [username] => 1
+    [ten_khach_hang] => 1
+)
+
+User ID: 7
+Received Data: Array
+(
+    [sku_phien_ban] => BED_003_BLU
+    [quantity] => 1
+)
+
+======= New Request =======
+Session Data: Array
+(
+    [ma_khach_hang] => 7
+    [username] => 1
+    [ten_khach_hang] => 1
+)
+
+User ID: 7
+Received Data: Array
+(
+    [sku_phien_ban] => SHE_004_BRO
+    [quantity] => 1
+)
+
+======= New Request =======
+Session Data: Array
+(
+    [ma_khach_hang] => 7
+    [username] => 1
+    [ten_khach_hang] => 1
+)
+
+User ID: 7
+Received Data: Array
+(
+    [sku_phien_ban] => SHE_004_WHI
+    [quantity] => 1
+)
+
+======= New Request =======
+Session Data: Array
+(
+    [ma_khach_hang] => 7
+    [username] => 1
+    [ten_khach_hang] => 1
+)
+
+User ID: 7
+Received Data: Array
+(
+    [sku_phien_ban] => SHE_004_WHI
+    [quantity] => 1
+)
+
+======= New Request =======
+Session Data: Array
+(
+    [ma_khach_hang] => 7
+    [username] => 1
+    [ten_khach_hang] => 1
+)
+
+User ID: 7
+Received Data: Array
+(
+    [sku_phien_ban] => BED_174_WHI
+    [quantity] => 1
+)
+
+======= New Request =======
+Session Data: Array
+(
+    [ma_khach_hang] => 7
+    [username] => 1
+    [ten_khach_hang] => 1
+)
+
+User ID: 7
+Received Data: Array
+(
+    [sku_phien_ban] => BED_174_WHI
+    [quantity] => 1
+)
+
+======= New Request =======
+Session Data: Array
+(
+    [ma_khach_hang] => 7
+    [username] => 1
+    [ten_khach_hang] => 1
+)
+
+User ID: 7
+Received Data: Array
+(
+    [sku] => BED_174
+    [quantity] => 1
+    [color] => Trắng
+    [material] => Gỗ MDF
+    [size] => 200x160x50 cm
+)
+
+Invalid Data Received.
+======= New Request =======
+Session Data: Array
+(
+    [ma_khach_hang] => 7
+    [username] => 1
+    [ten_khach_hang] => 1
+)
+
+User ID: 7
+Received Data: Array
+(
+    [sku] => BED_003
+    [quantity] => 1
+    [color] => Vàng
+    [material] => Gỗ thông
+    [size] => 200x180x50 cm
+)
+
+Invalid Data Received.
+======= New Request =======
+Session Data: Array
+(
+    [ma_khach_hang] => 7
+    [username] => 1
+    [ten_khach_hang] => 1
+)
+
+User ID: 7
+Received Data: Array
+(
+    [sku_phien_ban] => WAR_141_BLU
+    [quantity] => 1
+)
+
+======= New Request =======
+Session Data: Array
+(
+    [ma_khach_hang] => 7
+    [username] => 1
+    [ten_khach_hang] => 1
+)
+
+User ID: 7
+Received Data: Array
+(
+    [sku_phien_ban] => DEK_001_WHI
+    [quantity] => 1
+)
+
+Processing SKU_phien_ban: DEK_001_WHI, Quantity: 1
+======= New Request =======
+Session Data: Array
+(
+    [ma_khach_hang] => 7
+    [username] => 1
+    [ten_khach_hang] => 1
+)
+
+User ID: 7
+Received Data: Array
+(
+    [sku_phien_ban] => BED_003_BLU
+    [quantity] => 1
+)
+
+Processing SKU_phien_ban: BED_003_BLU, Quantity: 1

@@ -1,32 +1,127 @@
-.features-section {
-    display: flex;
-    justify-content: space-around;
-    padding: 40px 0;
-    background-color: #ffff;
+/* Style cho thông báo */
+.welcome-message {
+    position: fixed;
+    top: 20px; /* Vị trí thông báo nằm cách trên cùng một chút (sau header) */
+    left: 50%;
+    transform: translateX(-50%); /* Căn giữa thông báo theo chiều ngang */
+    background-color: #28a745; /* Màu xanh lá */
+    color: white;
+    padding: 15px 25px;
+    border-radius: 5px;
+    font-size: 18px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    opacity: 0; /* Ban đầu thông báo sẽ mờ đi */
+    display: none; /* Ban đầu ẩn thông báo */
+    animation: fadeInOut 3s ease-out; /* Hiệu ứng mờ dần khi xuất hiện và ẩn đi */
 }
 
+/* Hiệu ứng fadeInOut cho thông báo */
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-20px); /* Vị trí bắt đầu mờ đi từ trên */
+    }
+    30% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0); /* Vị trí thông báo khi đã xuất hiện */
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-20px); /* Vị trí thông báo khi mờ dần */
+    }
+}
+
+/* Hiển thị thông báo khi có class show */
+.welcome-message.show {
+    display: block; /* Hiển thị thông báo khi thêm class show */
+}
+
+
+/* Style cho các phần tử trong features-section */
+.features-section {
+    display: flex;
+    flex-wrap: wrap; /* Cho phép phần tử tự động xuống dòng nếu không đủ chỗ */
+    justify-content: space-around;
+    padding: 60px 20px; /* Tăng padding để tạo không gian thoáng hơn */
+    background-color: #f9f9f9; /* Đổi màu nền nhẹ nhàng để tạo sự tách biệt */
+    align-items: center;
+    border-radius: 10px; /* Bo góc cho toàn bộ section */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Thêm đổ bóng để nổi bật section */
+}
+
+/* Các box trong section */
 .feature-box {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    max-width: 200px;
+    max-width: 200px; /* Điều chỉnh kích thước để trông cân đối hơn */
+    background-color: #ffffff; /* Thêm nền trắng cho các feature-box */
+    padding: 10px; /* Tạo khoảng cách bên trong */
+    border-radius: 15px; /* Bo góc cho các box */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Thêm hiệu ứng đổ bóng nhẹ */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng khi hover */
+    cursor: pointer;
 }
 
+.feature-box:hover {
+    transform: translateY(-10px); /* Nhấc box lên khi hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Tăng độ đổ bóng khi hover */
+}
+
+/* Icon trong feature-box */
 .feature-icon {
-    font-size: 60px;
-    color: #f7b81d;
-    margin-bottom: 15px;
+    font-size: 40px;
+    color: #e67e22; /* Đổi màu icon để làm nổi bật */
+    margin-bottom: 20px; /* Tăng khoảng cách giữa icon và văn bản */
+    transition: transform 0.3s ease; /* Thêm hiệu ứng chuyển động cho icon */
 }
 
+.feature-box:hover .feature-icon {
+    transform: scale(1.1); /* Phóng to icon nhẹ khi hover */
+}
+
+/* Tiêu đề trong feature-box */
 .feature-content h3 {
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 10px;
-    color: #154422;
+    font-size: 18px; /* Tăng kích thước chữ cho tiêu đề để nổi bật hơn */
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
 }
 
+/* Mô tả trong feature-box */
 .feature-content p {
     font-size: 14px;
     color: #666;
+    line-height: 1.6; /* Tăng khoảng cách dòng để dễ đọc */
+}
+
+/* Đường phân cách giữa các feature-box */
+.vertical-divider {
+    width: 1px;
+    height: 80px;
+    background-color: #ddd;
+    margin: 0 20px;
+}
+
+/* Điều chỉnh cho thiết bị di động */
+@media screen and (max-width: 768px) {
+    .features-section {
+        flex-direction: column;
+        gap: 20px; /* Tăng khoảng cách giữa các phần tử khi xuống dòng */
+        padding: 40px 10px; /* Giảm padding để phù hợp hơn với màn hình nhỏ */
+    }
+
+    .vertical-divider {
+        display: none; /* Ẩn đường phân cách trên màn hình nhỏ */
+    }
+
+    .feature-box {
+        width: 80%; /* Đảm bảo feature-box chiếm gần hết chiều rộng trên màn hình nhỏ */
+        margin: 0 auto; /* Căn giữa các feature-box */
+    }
 }
