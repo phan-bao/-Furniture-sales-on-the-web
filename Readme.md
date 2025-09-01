@@ -29,3 +29,29 @@
 <p align="center">
   <img width="979" height="472" alt="image" src="https://github.com/user-attachments/assets/736b0318-5d1b-40cb-b951-cfdec5efa993" />
 </p>
+
+<h3 align="center">----------------------- News screen -----------------------------</h3>
+
+<p align="center">
+ <img width="975" height="432" alt="image" src="https://github.com/user-attachments/assets/e71de9bd-1d10-4555-813d-9b41ad0263ef" />
+</p>
+
+<h3 align="center">----------------------- Shopping Cart screen -----------------------------</h3>
+
+<p align="center">
+ <img width="975" height="469" alt="image" src="https://github.com/user-attachments/assets/af40b68e-b3dd-4156-805c-971eb56bdb3a" />
+</p>
+
+<h3 align="center">----------------------- Pay screen -----------------------------</h3>
+
+<p align="center">
+ <img width="975" height="471" alt="image" src="https://github.com/user-attachments/assets/f7fe043e-63f1-4f4d-b6b5-c2487b57c02b" />
+</p>
+<p align="center">
+ <img width="975" height="448" alt="image" src="https://github.com/user-attachments/assets/3bd0a5c4-db31-4ae1-a613-95f453295a88" />
+</p>
+<p align="center">
+<img width="975" height="462" alt="image" src="https://github.com/user-attachments/assets/03a2c1ff-b25c-422c-bcb1-839815f96e70" />
+</p>
+
+
